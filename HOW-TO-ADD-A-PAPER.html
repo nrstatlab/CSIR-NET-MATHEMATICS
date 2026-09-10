@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Add a Question Paper — NRSTATLAB CSIR NET Mathematics</title>
+<meta name="description" content="The pipeline that turns a CSIR NET question-paper PDF into a fully solved MathJax page: where to put the PDF, the JSON format, and how to rebuild the site.">
+<meta property="og:title" content="How to Add a Question Paper — NRSTATLAB CSIR NET Mathematics">
+<meta property="og:description" content="The pipeline that turns a CSIR NET question-paper PDF into a fully solved MathJax page: where to put the PDF, the JSON format, and how to rebuild the site.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NRSTATLAB">
+<meta property="og:url" content="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/HOW-TO-ADD-A-PAPER.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="canonical" href="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/HOW-TO-ADD-A-PAPER.html">
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true, processEnvironments: true,
+    packages: {'[+]': ['ams', 'noerrors', 'noundefined']}
+  },
+  loader: { load: ['[tex]/ams', '[tex]/noerrors', '[tex]/noundefined'] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+<div class="nrstatlab-bar"><div class="nrstatlab-inner"><a class="nrstatlab-brand" href="https://nrstatlab.github.io/planning-for-future/">NRSTATLAB</a><span class="nrstatlab-sep">&rsaquo;</span><a class="nrstatlab-brand" style="border-bottom-color:transparent" href="index.html">CSIR NET Mathematics</a><span class="nrstatlab-sep">&rsaquo;</span><span class="nrstatlab-here">How to add a paper</span><a class="nrstatlab-topics" href="papers/index.html">Solved papers</a></div></div>
+
+<nav class="topnav">
+  <a href="index.html" class="home">Home</a>
+  <a href="syllabus.html">Syllabus &amp; Pattern</a>
+  <a href="papers/index.html">Solved Papers</a>
+  <a href="strategy.html">Exam Strategy</a>
+</nav>
+
+<header class="site-header">
+  <h1>How to Add a Paper</h1>
+  <p>The pipeline that turns a question-paper PDF into a fully solved page on this site</p>
+  <span class="badge">Repeatable &middot; one paper at a time</span>
+</header>
+
+<main class="container">
+
+  <section class="unit-content">
+    <h2>The short version</h2>
+    <ol>
+      <li>Commit the question-paper PDF into <code>papers-inbox/</code> in this repository.</li>
+      <li>Ask for it to be solved, naming the file.</li>
+      <li>Each question is transcribed into MathJax and worked out; the paper's JSON file in
+      <code>data/papers/</code> fills up batch by batch.</li>
+      <li><code>python3 tools/build.py</code> regenerates the paper page and the papers index.</li>
+      <li>The commit is pushed and GitHub Pages publishes it.</li>
+    </ol>
+    <div class="note"><strong>Why the PDF must be committed rather than shared as a link.</strong>
+    Cloud-drive links cannot be opened from the build environment — outbound access to
+    <code>drive.google.com</code> is blocked by policy. A file inside the repository is read
+    directly from disk, which also means the exact source of every solution stays archived
+    next to the solution itself.</div>
+  </section>
+
+  <section class="unit-content">
+    <h2>Repository layout</h2>
+    <table>
+      <tr><th>Path</th><th>What lives there</th></tr>
+      <tr><td><code>papers-inbox/</code></td><td>Raw question-paper PDFs waiting to be processed, exactly as downloaded.</td></tr>
+      <tr><td><code>data/papers/*.json</code></td><td>One file per paper: metadata plus every question, its options, its answer and its worked steps. This is the only place content is edited.</td></tr>
+      <tr><td><code>tools/build.py</code></td><td>Generator. Reads the JSON, writes the HTML. Never edit a paper's HTML by hand — the next build overwrites it.</td></tr>
+      <tr><td><code>papers/*.html</code></td><td>Generated output: one page per paper, plus the papers index.</td></tr>
+      <tr><td><code>assets/styles.css</code></td><td>Shared stylesheet for the whole site.</td></tr>
+    </table>
+  </section>
+
+  <section class="unit-content">
+    <h2>The shape of a question in the JSON</h2>
+    <p>Each entry in the <code>questions</code> array carries the question and its solution.
+    Anything written in <code>body</code>, <code>options</code>, <code>steps</code> and the rest
+    is HTML with inline MathJax, so <code>$\int_0^1 x^2\,dx$</code> renders as mathematics.</p>
+
+<pre><code>{
+  "n": 27,
+  "qid": "706507",
+  "part": "B",
+  "topic": "Linear Algebra",
+  "subtopic": "Eigenvalues",
+  "type": "single",
+  "body": "Let $A$ be a $3\times 3$ real matrix with $A^2 = A$ and $\operatorname{rank}(A)=2$. Then the characteristic polynomial of $A$ is:",
+  "options": ["$x^3 - x^2$", "$x^3 - 2x^2 + x$", "$x(x-1)^2$", "$(x-1)^3$"],
+  "answer": [3],
+  "given": "$A$ is idempotent, real, of size $3$, with rank $2$.",
+  "concept": "An idempotent matrix is diagonalisable with eigenvalues only $0$ and $1$; the multiplicity of the eigenvalue $1$ equals the rank.",
+  "steps": [
+    "&lt;b&gt;Eigenvalues.&lt;/b&gt; From $A^2=A$, every eigenvalue satisfies $\lambda^2=\lambda$, so $\lambda\in\{0,1\}$.",
+    "&lt;b&gt;Multiplicities.&lt;/b&gt; $A$ is diagonalisable, so the multiplicity of $1$ is $\operatorname{rank}(A)=2$ and that of $0$ is $3-2=1$.",
+    "&lt;b&gt;Characteristic polynomial.&lt;/b&gt; Hence $\chi_A(x)=x(x-1)^2$."
+  ],
+  "conclusion": "Option (3) is correct.",
+  "pitfall": "Rank fixes the multiplicity of $1$, not of $0$. Reading it the other way gives option (2)."
+}</code></pre>
+
+    <div class="definition"><strong>Field notes</strong>
+      <ul>
+        <li><code>answer</code> is a list of 1-based option numbers. Part C questions may hold
+        several, for example <code>[1, 3, 4]</code>.</li>
+        <li><code>type</code> is <code>"single"</code> for Parts A and B, <code>"multiple"</code>
+        for Part C.</li>
+        <li><code>topic</code> feeds both the topic filter and the distribution chart, so keep
+        the names consistent across papers.</li>
+        <li>A question with an empty <code>body</code> or an empty <code>answer</code> is treated
+        as not yet done and is simply left out of the published page. That is what lets a paper
+        go up in instalments without ever showing a blank question.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="unit-content">
+    <h2>Rebuilding</h2>
+    <pre><code>python3 tools/build.py</code></pre>
+    <p>It prints one line per paper with the number of questions solved out of the total, then
+    rewrites <code>papers/index.html</code>. There are no dependencies beyond the Python
+    standard library, and nothing to install.</p>
+    <p>The progress bar at the top of each paper page and the status pill on the papers index
+    are both computed from the JSON, so they can never disagree with what is actually
+    published.</p>
+  </section>
+
+  <section class="unit-content">
+    <h2>Starting a brand-new paper</h2>
+    <p>Copy an existing file in <code>data/papers/</code>, change <code>slug</code>,
+    <code>title</code>, <code>short_title</code>, <code>exam_date</code>, <code>shift</code> and
+    <code>blurb</code>, then empty out the question bodies. The <code>slug</code> becomes the
+    page's file name and its permanent URL, so use the pattern
+    <code>YYYY-MM-DD-subject-shiftN</code> and do not change it afterwards.</p>
+    <p>The <code>parts</code> array describes the paper's structure. For CSIR NET Mathematical
+    Sciences it is always Part A questions 1&ndash;20, Part B 21&ndash;60 and Part C
+    61&ndash;120, but the field exists so that a differently structured paper can be added
+    without touching the generator.</p>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <p><strong>NRSTATLAB</strong> &middot; CSIR NET Mathematical Sciences &middot; Free study material for aspirants.</p>
+  <p>Question papers belong to CSIR-HRDG / NTA and are reproduced here only for educational discussion. Solutions are our own.</p>
+</footer>
+
+</body>
+</html>

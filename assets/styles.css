@@ -1,0 +1,444 @@
+/* UGC NET Statistics Study Material - Shared Stylesheet */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1e3a8a;
+  --primary-light: #3b82f6;
+  --accent: #f59e0b;
+  --success: #10b981;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* HEADER */
+.site-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.site-header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.site-header p { font-size: 1.05rem; opacity: 0.95; }
+.site-header .badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* NAV */
+.topnav {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.topnav a {
+  text-decoration: none;
+  color: var(--primary);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.topnav a:hover { background: var(--primary); color: #fff; }
+.topnav a.home { background: var(--accent); color: #fff; }
+
+/* LAYOUT */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* UNIT CARDS (Index) */
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.unit-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--primary-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.unit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-left-color: var(--accent);
+}
+.unit-card .unit-number {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.unit-card h3 { color: var(--primary); margin: 0.4rem 0 0.6rem; font-size: 1.2rem; }
+.unit-card p { color: var(--muted); font-size: 0.92rem; }
+
+/* CONTENT */
+section.unit-content {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+h2 {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+  margin: 2rem 0 1rem;
+  font-size: 1.7rem;
+}
+h2:first-child { margin-top: 0; }
+h3 {
+  color: var(--primary-light);
+  margin: 1.5rem 0 0.7rem;
+  font-size: 1.3rem;
+}
+h4 { color: var(--text); margin: 1.2rem 0 0.5rem; font-size: 1.1rem; }
+
+p { margin-bottom: 0.9rem; }
+
+ul, ol { margin: 0.5rem 0 1rem 1.7rem; }
+li { margin-bottom: 0.35rem; }
+
+/* DEFINITION BOX */
+.definition {
+  background: #eef2ff;
+  border-left: 5px solid var(--primary);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.definition strong { color: var(--primary); }
+
+/* THEOREM BOX */
+.theorem {
+  background: #fef3c7;
+  border-left: 5px solid var(--accent);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.theorem strong { color: #92400e; }
+
+/* EXAMPLE BOX */
+.example {
+  background: #ecfdf5;
+  border-left: 5px solid var(--success);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.example strong { color: #065f46; }
+.example .ex-label {
+  display: inline-block;
+  background: var(--success);
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+/* NOTE BOX */
+.note {
+  background: #fef2f2;
+  border-left: 5px solid #ef4444;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+}
+.note strong { color: #991b1b; }
+
+/* CODE / FORMULA */
+code {
+  background: var(--code-bg);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.92em;
+  color: #be123c;
+}
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+pre code { background: transparent; color: inherit; padding: 0; }
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+th, td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+tr:nth-child(even) { background: #f8fafc; }
+tr:hover { background: #eef2ff; }
+
+/* TOC */
+.toc {
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.toc h4 { margin-top: 0; color: var(--primary); }
+.toc ul { margin-left: 1.2rem; }
+.toc a { color: var(--primary-light); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* FOOTER */
+.site-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.92rem;
+}
+.site-footer a { color: var(--accent); text-decoration: none; }
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+.pagination a {
+  flex: 1;
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.pagination a:hover { background: var(--primary); color: #fff; }
+.pagination .next { text-align: right; }
+
+/* MathJax sizing */
+mjx-container { font-size: 1.05em !important; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  /* A wide table must scroll inside itself rather than widen the page.
+     Without this the table pushes the whole document sideways on a phone and
+     the code chips in its cells are cut off at the screen edge. */
+  table { display: block; max-width: 100%; overflow-x: auto; }
+  /* A long file path or command in running text is one unbreakable word; it
+     drags the paragraph, and the page with it, past the screen edge. break-word
+     (not anywhere) lets it wrap without shrinking a table's columns. */
+  code { overflow-wrap: break-word; }
+  pre code { overflow-wrap: normal; }
+  /* Same for prose: a run of dot leaders, or a sum written out term by term,
+     is one word as far as the line-breaker is concerned. This only affects a
+     word that cannot fit; ordinary text wraps exactly as before. */
+  p, li, td, th, h1, h2, h3, h4 { overflow-wrap: break-word; }
+  /* Display math is typeset at its natural width, so it scrolls in its own box
+     rather than widening the page. */
+  mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  .site-header h1 { font-size: 1.6rem; }
+  section.unit-content { padding: 1.5rem; }
+  h2 { font-size: 1.4rem; }
+  .topnav { padding: 0.5rem; }
+  .topnav a { padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+}
+
+/* DIAGRAMS / FIGURES */
+.diagram {
+  margin: 1.5rem 0;
+  padding: 1rem 1rem 0.6rem;
+  background: #fbfdff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.diagram svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.diagram .cap { color: var(--muted); font-size: 0.86rem; margin-top: 0.5rem; text-align: center; }
+.diagram .cap strong { color: var(--primary); }
+
+/* REAL-WORLD USES BOX */
+.realworld {
+  background: #f0f7ff;
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid var(--primary-light);
+  border-radius: 0 8px 8px 0;
+  padding: 0.8rem 1.1rem;
+  margin: 1.3rem 0 0.6rem;
+}
+.realworld h4 { margin: 0 0 0.4rem; color: var(--primary); font-size: 1rem; }
+.realworld ol { margin: 0 0 0 1.3rem; }
+.realworld li { margin-bottom: 0.2rem; font-size: 0.93rem; color: var(--text); }
+
+/* HOME PAGE COLOUR-GUIDE LEGEND */
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.legend-grid > div { margin: 0; }
+.legend-grid .realworld h4 { margin: 0 0 0.25rem; }
+
+/* ============================================================
+   CSIR NET MATHEMATICAL SCIENCES — additions
+   Everything above this line is the shared NRSTATLAB base.
+   ============================================================ */
+
+/* NRSTATLAB hub bar (also inlined in <head> of each page so the
+   bar is painted before the stylesheet lands). */
+.nrstatlab-bar{background:var(--primary);color:#fff;font-size:.9rem;line-height:1.5;padding:10px 22px;margin:0}
+.nrstatlab-bar .nrstatlab-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nrstatlab-bar a.nrstatlab-brand{color:#fff;font-weight:700;letter-spacing:.09em;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.45);padding-bottom:1px}
+.nrstatlab-bar a.nrstatlab-brand:hover{border-bottom-color:#fff}
+.nrstatlab-bar .nrstatlab-sep{opacity:.55}
+.nrstatlab-bar .nrstatlab-here{opacity:.95}
+.nrstatlab-bar a.nrstatlab-topics{color:#fff;text-decoration:none;font-weight:600;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:6px;padding:2px 10px;white-space:nowrap}
+.nrstatlab-bar a.nrstatlab-topics:hover{background:rgba(255,255,255,.3)}
+
+/* ---------- Paper part headings ---------- */
+.part-head{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);color:#fff;padding:1rem 1.5rem;border-radius:8px;margin:2.5rem 0 1rem}
+.part-head h2{color:#fff;border:none;margin:0;padding:0}
+.part-head p{margin:.25rem 0 0;opacity:.92;font-size:.95rem}
+
+/* ---------- A single solved question ---------- */
+.mcq{background:#fff;border:1px solid var(--border);border-radius:8px;padding:.95rem 1.15rem;margin:.8rem 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.mcq .q{font-weight:600;margin-bottom:.5rem;color:var(--text)}
+.mcq .qn{color:var(--primary);font-weight:700}
+.mcq .qid{float:right;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.04em;background:var(--code-bg);border-radius:4px;padding:.1rem .45rem}
+.mcq ol.options{list-style:none;margin:.5rem 0 .6rem;padding:0;counter-reset:opt}
+.mcq ol.options li{counter-increment:opt;margin:.28rem 0;padding:.3rem .6rem .3rem 2.3rem;position:relative;border-radius:6px}
+.mcq ol.options li::before{content:counter(opt);position:absolute;left:.55rem;top:.3rem;width:1.35rem;height:1.35rem;line-height:1.35rem;text-align:center;border-radius:50%;background:var(--code-bg);color:var(--muted);font-size:.78rem;font-weight:700}
+.mcq ol.options li.correct{background:#ecfdf5;font-weight:700;color:#065f46}
+.mcq ol.options li.correct::before{background:var(--success);color:#fff}
+
+/* ---------- Click-to-reveal worked solution ---------- */
+.mcq details{background:#f8fafc;border:1px solid var(--border);border-left:4px solid var(--success);padding:.5rem .9rem;border-radius:0 8px 8px 0;margin-top:.5rem}
+.mcq details[open]{background:#f6fefb}
+.mcq details>summary{cursor:pointer;font-weight:700;color:#065f46;list-style:none;user-select:none}
+.mcq details>summary::-webkit-details-marker{display:none}
+.mcq details>summary::before{content:"\25B8\00a0";display:inline-block;transition:transform .15s}
+.mcq details[open]>summary::before{transform:rotate(90deg)}
+.mcq .verdict{margin:.6rem 0 .4rem;font-size:1.02rem}
+.mcq .verdict b{color:#065f46}
+
+/* Numbered solution steps */
+.steps{counter-reset:step;list-style:none;margin:.4rem 0 .2rem;padding:0}
+.steps>li{counter-increment:step;position:relative;padding:.15rem 0 .55rem 2.2rem;margin:0}
+.steps>li::before{content:"Step " counter(step);position:absolute;left:0;top:.15rem;font-size:.66rem;font-weight:800;color:#fff;background:var(--primary-light);border-radius:4px;padding:.08rem .3rem;letter-spacing:.03em}
+.steps>li>b:first-child{color:var(--primary)}
+
+.concept{background:#eef2ff;border-left:4px solid var(--primary);border-radius:0 6px 6px 0;padding:.5rem .8rem;margin:.5rem 0;font-size:.94rem}
+.concept b{color:var(--primary)}
+.pitfall{background:#fef2f2;border-left:4px solid #ef4444;border-radius:0 6px 6px 0;padding:.5rem .8rem;margin:.5rem 0;font-size:.94rem}
+.pitfall b{color:#991b1b}
+
+.tags{margin-top:.45rem;font-size:.78rem;color:var(--muted)}
+.tag{display:inline-block;background:var(--code-bg);border:1px solid var(--border);border-radius:999px;padding:.05rem .55rem;margin-right:.3rem;color:var(--muted)}
+
+/* ---------- Toolbar above the questions ---------- */
+.qtools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:#fff;border:1px solid var(--border);border-radius:8px;padding:.6rem .9rem;margin:1rem 0}
+.qtools button{font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--code-bg);color:var(--primary);border-radius:6px;padding:.3rem .8rem}
+.qtools button:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.qtools .spacer{flex:1}
+.qtools label{font-size:.85rem;color:var(--muted);font-weight:600}
+.qtools select{font:inherit;font-size:.85rem;padding:.25rem .5rem;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--text)}
+
+/* ---------- Progress / coverage strip ---------- */
+.coverage{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem 1.2rem;margin:1rem 0}
+.coverage h3{margin:0 0 .5rem;color:var(--primary)}
+.cov-track{display:block;width:100%;height:1.1rem;background:#eef2f7;border-radius:6px;overflow:hidden}
+.cov-bar{display:block;height:100%;background:linear-gradient(90deg,var(--success) 0%,#34d399 100%);color:#fff;font-size:.72rem;font-weight:700;text-align:right;padding-right:.4rem;line-height:1.1rem;box-sizing:border-box;min-width:2rem}
+.cov-note{margin:.5rem 0 0;font-size:.85rem;color:var(--muted)}
+
+/* ---------- Topic distribution bars ---------- */
+.chartbox{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.3rem 1.3rem;margin:.8rem 0 1.6rem}
+.chartbox h3{margin:0 0 .2rem;color:var(--primary)}
+.chartbox .chart-note{margin:0 0 1rem;color:var(--muted);font-size:.88rem}
+.chart-row{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;align-items:center;gap:.6rem;margin:.35rem 0}
+.chart-row .chart-label{font-size:.86rem;text-align:right;line-height:1.2}
+.chart-track{display:block;width:100%;background:#eef2f7;border-radius:5px;overflow:hidden}
+.chart-bar{display:block;background:linear-gradient(90deg,var(--primary) 0%,var(--primary-light) 100%);color:#fff;font-size:.8rem;font-weight:700;padding:.28rem .5rem;border-radius:5px;white-space:nowrap;min-width:1.7rem;box-sizing:border-box;text-align:right}
+@media (max-width:560px){.chart-row{grid-template-columns:1fr;gap:.15rem}.chart-row .chart-label{text-align:left}}
+
+/* ---------- Paper cards on the papers index ---------- */
+.paper-card{background:var(--card);border-radius:12px;padding:1.3rem 1.5rem;box-shadow:var(--shadow);border-left:5px solid var(--primary-light);display:block;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.paper-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.12);border-left-color:var(--accent)}
+.paper-card .meta{font-size:.82rem;color:var(--accent);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.paper-card h3{color:var(--primary);margin:.35rem 0 .5rem;font-size:1.15rem}
+.paper-card p{color:var(--muted);font-size:.92rem;margin-bottom:.4rem}
+.paper-card .foot{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--muted);font-weight:600;gap:.6rem;flex-wrap:wrap}
+.paper-card .go{color:var(--primary-light)}
+.status{display:inline-block;border-radius:999px;padding:.05rem .6rem;font-size:.75rem;font-weight:700}
+.status.done{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.status.wip{background:#fef3c7;color:#92400e;border:1px solid #fde68a}
+.status.queued{background:#f1f5f9;color:#475569;border:1px solid var(--border)}
+
+@media print{
+  .topnav,.qtools,.nrstatlab-bar{display:none!important}
+  .mcq details{border:none;background:transparent}
+  .mcq details>summary{display:none}
+  .mcq details[open],.mcq details:not([open]){display:block}
+  .mcq details>*{display:block!important}
+}

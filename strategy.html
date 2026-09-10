@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSIR NET Mathematics — Exam Strategy and Attempt Plan</title>
+<meta name="description" content="A time budget, the expected-value arithmetic of guessing in Parts B and C, and a revision order for CSIR NET Mathematical Sciences.">
+<meta property="og:title" content="CSIR NET Mathematics — Exam Strategy and Attempt Plan">
+<meta property="og:description" content="A time budget, the expected-value arithmetic of guessing in Parts B and C, and a revision order for CSIR NET Mathematical Sciences.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NRSTATLAB">
+<meta property="og:url" content="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/strategy.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="canonical" href="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/strategy.html">
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true, processEnvironments: true,
+    packages: {'[+]': ['ams', 'noerrors', 'noundefined']}
+  },
+  loader: { load: ['[tex]/ams', '[tex]/noerrors', '[tex]/noundefined'] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+<div class="nrstatlab-bar"><div class="nrstatlab-inner"><a class="nrstatlab-brand" href="https://nrstatlab.github.io/planning-for-future/">NRSTATLAB</a><span class="nrstatlab-sep">&rsaquo;</span><a class="nrstatlab-brand" style="border-bottom-color:transparent" href="index.html">CSIR NET Mathematics</a><span class="nrstatlab-sep">&rsaquo;</span><span class="nrstatlab-here">Exam Strategy</span><a class="nrstatlab-topics" href="papers/index.html">Solved papers</a></div></div>
+
+<nav class="topnav">
+  <a href="index.html" class="home">Home</a>
+  <a href="syllabus.html">Syllabus &amp; Pattern</a>
+  <a href="papers/index.html">Solved Papers</a>
+  <a href="strategy.html">Exam Strategy</a>
+</nav>
+
+<header class="site-header">
+  <h1>How to Attempt the Paper</h1>
+  <p>Order, arithmetic and revision priorities for the three-hour CSIR NET Mathematical Sciences paper</p>
+  <span class="badge">Built from the marking scheme, not from folklore</span>
+</header>
+
+<main class="container">
+
+  <section class="unit-content">
+    <h2>The arithmetic of guessing</h2>
+    <p>Before any advice about topics, settle what a guess is worth. Let $p$ be your probability
+    of getting a question right.</p>
+
+    <h3>Part B: $+3$ for a right answer, $-0.75$ for a wrong one</h3>
+    <p>The expected gain from attempting is</p>
+    $$E_B(p) = 3p - 0.75(1-p) = 3.75p - 0.75,$$
+    <p>which is positive exactly when $p > 0.2$. A blind guess among four options gives
+    $p = 0.25$ and $E_B = 0.1875$ — technically positive, but so small that a handful of such
+    guesses is statistical noise. Eliminating even one option lifts $p$ to $1/3$ and
+    $E_B$ to $0.5$; eliminating two gives $p = 0.5$ and $E_B = 1.125$.</p>
+
+    <div class="concept"><b>Rule for Part B.</b> Attempt if you can rule out at least one option.
+    Skip only if all four look equally plausible <em>and</em> you already have 25 better
+    attempts.</div>
+
+    <h3>Part C: $+4.75$ for a fully correct response, nothing deducted</h3>
+    <p>Here $E_C(p) = 4.75p \ge 0$ for every $p$. There is no value of $p$ at which leaving a
+    counted attempt blank is better than filling it.</p>
+    <p>But "correct" means the exact subset. With four options and no idea at all, you are
+    choosing among $2^4 - 1 = 15$ non-empty subsets, so a truly blind $p \approx 1/15$. Deciding
+    each option independently is far better: if you can settle three of the four options
+    confidently and are guessing on one, $p = 0.5$.</p>
+
+    <div class="pitfall"><b>The Part C trap.</b> Marks are awarded only for the complete correct
+    subset. Selecting three of four correct options scores zero — identical to selecting three
+    wrong ones. Treat each option as a separate true/false question and only submit when you
+    have a verdict on every one.</div>
+  </section>
+
+  <section class="unit-content">
+    <h2>A time budget that works</h2>
+    <p>Three hours is 180 minutes for 60 counted attempts — three minutes per attempt on
+    average, but the parts are not equally expensive.</p>
+
+    <table>
+      <tr><th>Phase</th><th>Minutes</th><th>What you do</th></tr>
+      <tr><td>Part A</td><td>25–30</td><td>All 20 questions read, best 15 attempted. Aptitude questions are either quick or not worth the fight.</td></tr>
+      <tr><td>Part B, first pass</td><td>45</td><td>Answer only what you recognise on sight. Mark the rest for review; do not stop to derive.</td></tr>
+      <tr><td>Part C, first pass</td><td>55</td><td>Same discipline. Look for questions where each option is a short independent check.</td></tr>
+      <tr><td>Second pass</td><td>40</td><td>Return to marked questions, in the part where your attempt count is still short of the cap.</td></tr>
+      <tr><td>Reserve</td><td>10</td><td>Fill every counted Part C slot. There is no penalty for being wrong there.</td></tr>
+    </table>
+
+    <div class="concept"><b>Why Part A goes first.</b> It carries 30 marks with no subject
+    knowledge and the shortest solutions in the paper. Doing it while you are freshest converts
+    the easiest marks in the paper before fatigue sets in.</div>
+  </section>
+
+  <section class="unit-content">
+    <h2>What to revise, and in what order</h2>
+    <p>There is no per-unit quota in Parts B and C. You may answer entirely from the units you
+    know. That makes depth in three areas worth more than shallow coverage of all four.</p>
+
+    <ol>
+      <li><strong>Linear algebra</strong> — rank, eigenvalues, diagonalisability, Jordan form,
+      quadratic-form signature. Almost every question is settled by computation, so it rewards
+      practice rather than insight.</li>
+      <li><strong>Real analysis</strong> — convergence tests, uniform convergence, continuity
+      and differentiability counterexamples. Part C loves "which of the following are true"
+      questions built from standard counterexamples; collect them.</li>
+      <li><strong>Group and ring theory</strong> — orders of elements, Sylow counting, ideals in
+      $\mathbb{Z}_n$ and in polynomial rings, irreducibility. High density of short questions.</li>
+      <li><strong>Complex analysis</strong> — residues, singularity classification, Möbius maps.
+      A small syllabus with a large question share.</li>
+      <li><strong>ODEs and numerical analysis</strong> — existence-uniqueness conditions,
+      Sturm–Liouville, Newton–Raphson and Runge–Kutta orders of convergence. Formulaic and
+      quick.</li>
+      <li><strong>Unit IV</strong> — for anyone from a statistics background this is the
+      cheapest unit in the paper: probability inequalities, standard distributions, estimation
+      and testing, linear models, Markov chains and queueing all appear directly.</li>
+    </ol>
+
+    <div class="note"><strong>Counterexamples are the currency of Part C.</strong> Keep a single
+    page of them: a continuous nowhere-differentiable function, a convergent-but-not-absolutely
+    convergent series, a non-normal subgroup, a ring that is a UFD but not a PID, a bounded
+    sequence with no convergent subsequence in an infinite-dimensional space. Most "which of
+    these statements are true" questions are decided by one of them.</div>
+  </section>
+
+  <section class="unit-content">
+    <h2>Working through the solved papers on this site</h2>
+    <p>Use each paper twice. The first time, keep every solution collapsed, sit with a clock and
+    attempt it as an exam under the real caps: 15, 25 and 20 attempts. Only then open the
+    solutions.</p>
+    <p>The second time, a fortnight later, read the solutions of the questions you got wrong and
+    write out the "Idea used" line for each in your own words. If you cannot state which theorem
+    a question tests, you have not yet learned it, however clear the algebra looked.</p>
+    <p>The <em>Reveal every solution</em> button prints the whole paper with solutions open,
+    which is what you want for the second pass. The topic filter shows one topic at a time when
+    you are revising a single area.</p>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <p><strong>NRSTATLAB</strong> &middot; CSIR NET Mathematical Sciences &middot; Free study material for aspirants.</p>
+  <p>Question papers belong to CSIR-HRDG / NTA and are reproduced here only for educational discussion. Solutions are our own.</p>
+</footer>
+
+</body>
+</html>

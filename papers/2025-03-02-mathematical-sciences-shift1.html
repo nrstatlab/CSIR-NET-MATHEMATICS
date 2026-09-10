@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSIR NET Mathematical Sciences 2 March 2025 (Shift I) — Fully Solved Paper</title>
+<meta name="description" content="Mathematical Sciences (Code 704) · 02 March 2025 · 120 questions with step-by-step solutions">
+<meta property="og:title" content="CSIR NET Mathematical Sciences 2 March 2025 (Shift I) — Fully Solved Paper">
+<meta property="og:description" content="Mathematical Sciences (Code 704) · 02 March 2025 · 120 questions with step-by-step solutions">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NRSTATLAB">
+<meta property="og:url" content="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/papers/2025-03-02-mathematical-sciences-shift1.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="canonical" href="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/papers/2025-03-02-mathematical-sciences-shift1.html">
+<link rel="stylesheet" href="../assets/styles.css">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    packages: {'[+]': ['ams', 'noerrors', 'noundefined']}
+  },
+  loader: { load: ['[tex]/ams', '[tex]/noerrors', '[tex]/noundefined'] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+
+</head>
+<body>
+<div class="nrstatlab-bar"><div class="nrstatlab-inner"><a class="nrstatlab-brand" href="https://nrstatlab.github.io/planning-for-future/">NRSTATLAB</a><span class="nrstatlab-sep">&rsaquo;</span><a class="nrstatlab-brand" style="border-bottom-color:transparent" href="../index.html">CSIR NET Mathematics</a><span class="nrstatlab-sep">&rsaquo;</span><span class="nrstatlab-here">CSIR NET Mathematics — 2 March 2025, Shift I</span><a class="nrstatlab-topics" href="../syllabus.html">Syllabus &amp; pattern</a></div></div>
+
+<nav class="topnav">
+<a href="../index.html" class="home">Home</a>
+<a href="../syllabus.html">Syllabus &amp; Pattern</a>
+<a href="../papers/index.html" style="background:#1e3a8a;color:#fff;">Solved Papers</a>
+<a href="../strategy.html">Exam Strategy</a>
+</nav>
+
+<header class="site-header">
+  <h1>CSIR NET Mathematics — 2 March 2025, Shift I</h1>
+  <p>Mathematical Sciences (Code 704) &middot; 02 March 2025 &middot; 09:00 – 12:00</p>
+  <span class="badge">120 questions &middot; every step shown</span>
+</header>
+
+<main class="container">
+
+  <div class="coverage">
+    <h3>Solutions ready: 0 of 120</h3>
+    <span class="cov-track"><span class="cov-bar" style="width:6.0%">0%</span></span>
+    <p class="cov-note">The source PDF stores every question as a page image, so each one is being transcribed into MathJax and solved by hand. This bar moves as batches are checked in.</p>
+  </div>
+
+  
+
+  <div class="qtools">
+    <button type="button" id="open-all">Reveal every solution</button>
+    <button type="button" id="shut-all">Hide every solution</button>
+    <span class="spacer"></span>
+    <label for="topic-filter">Show topic</label>
+    <select id="topic-filter"><option value="all">All topics</option></select>
+  </div>
+
+  <div id="paper">
+<div class="part-head" id="parta"><h2>Part A — General Aptitude</h2><p>20 questions &middot; attempt any 15 &middot; 2 marks each &middot; &minus;0.5 for a wrong answer</p></div>
+<div class="note"><strong>Not transcribed yet.</strong> Questions 1&ndash;20 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
+<div class="part-head" id="partb"><h2>Part B — Subject, single correct option</h2><p>40 questions &middot; attempt any 25 &middot; 3 marks each &middot; &minus;0.75 for a wrong answer</p></div>
+<div class="note"><strong>Not transcribed yet.</strong> Questions 21&ndash;60 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
+<div class="part-head" id="partc"><h2>Part C — Subject, one or more options correct</h2><p>60 questions &middot; attempt any 20 &middot; 4.75 marks each &middot; no negative marking &middot; marks only if every correct option is chosen</p></div>
+<div class="note"><strong>Not transcribed yet.</strong> Questions 61&ndash;120 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
+
+  </div>
+
+</main>
+
+<script>
+(function () {
+  var root = document.getElementById('paper');
+  if (!root) return;
+  var all = function () { return Array.prototype.slice.call(root.querySelectorAll('details')); };
+  var set = function (open) { all().forEach(function (d) { d.open = open; }); };
+  var openAll = document.getElementById('open-all');
+  var shutAll = document.getElementById('shut-all');
+  if (openAll) openAll.addEventListener('click', function () { set(true); });
+  if (shutAll) shutAll.addEventListener('click', function () { set(false); });
+
+  var filter = document.getElementById('topic-filter');
+  if (filter) {
+    filter.addEventListener('change', function () {
+      var want = filter.value;
+      root.querySelectorAll('.mcq').forEach(function (q) {
+        q.hidden = !(want === 'all' || (q.dataset.topic || '') === want);
+      });
+      root.querySelectorAll('.part-head').forEach(function (h) {
+        var n = 0, el = h.nextElementSibling;
+        while (el && !el.classList.contains('part-head')) {
+          if (el.classList.contains('mcq') && !el.hidden) n++;
+          el = el.nextElementSibling;
+        }
+        h.hidden = n === 0;
+      });
+    });
+  }
+})();
+</script>
+<footer class="site-footer">
+  <p><strong>NRSTATLAB</strong> &middot; CSIR NET Mathematical Sciences &middot; Free study material for aspirants.</p>
+  <p>Question papers belong to CSIR-HRDG / NTA and are reproduced here only for educational discussion. Solutions are our own.</p>
+</footer>
+</body>
+</html>
