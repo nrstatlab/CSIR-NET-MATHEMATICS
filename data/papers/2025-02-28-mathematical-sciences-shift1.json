@@ -402,133 +402,232 @@
    "n": 14,
    "qid": "14",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Logical puzzles",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Frank, Sam, Tom and David came first, second, third and fourth in a race but not necessarily in this order. Only one had the first letter of his position matching that of his name. If Tom came first and Sam did not come second then",
+   "options": [
+    "David came third",
+    "Frank came fourth",
+    "David came fourth",
+    "Sam came fourth"
+   ],
+   "answer": [
+    2
+   ],
+   "given": "Four runners in four positions. Exactly one runner's initial matches the initial of his finishing position. Tom finished first, and Sam was not second.",
+   "concept": "List which name-position pairs could possibly match. Only Frank (First, Fourth), Sam (Second) and Tom (Third) can match at all, since no position begins with D. Then use the two given facts to see which single match survives.",
+   "steps": [
+    "<b>List the possible matches.</b> First and Fourth begin with F, so only Frank can match there. Second begins with S, so only Sam. Third begins with T, so only Tom. David can never match, as no position begins with D.",
+    "<b>Rule out Tom.</b> Tom came first, and First does not begin with T, so Tom is not the match. He also cannot be third, since he is first.",
+    "<b>Rule out Sam.</b> Sam's only possible match is Second, and we are told Sam did not come second.",
+    "<b>So Frank is the match.</b> Exactly one runner matches, and only Frank is left. Frank must be First or Fourth; First is taken by Tom, so <b>Frank came fourth</b>.",
+    "<b>Fill in the rest.</b> Sam and David take second and third. Sam is not second, so Sam is third and David is second. The finish is Tom, David, Sam, Frank, and Frank alone matches his position."
+   ],
+   "conclusion": "Frank came fourth, option (2). The other three options contradict the completed order.",
+   "pitfall": "Forgetting that Fourth also begins with F. Treating First as Frank's only chance makes the puzzle look unsolvable once Tom is placed first."
   },
   {
    "n": 15,
    "qid": "15",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Odd one out",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "In the fictional country of Numberia, which of the following provinces is the odd one out?",
+   "options": [
+    "SONECON",
+    "CUGHUSTER",
+    "FATWOHUM",
+    "CAFIVENGUS"
+   ],
+   "answer": [
+    2
+   ],
+   "given": "Four invented place names, in a country whose own name points at numbers.",
+   "concept": "The country is called Numberia, which is the hint: look for a number word hidden as a run of consecutive letters inside each name.",
+   "steps": [
+    "<b>SONECON.</b> Reading letters two to four gives S&mdash;<b>ONE</b>&mdash;CON, so it hides <b>ONE</b>.",
+    "<b>FATWOHUM.</b> Letters three to five give FA&mdash;<b>TWO</b>&mdash;HUM, so it hides <b>TWO</b>.",
+    "<b>CAFIVENGUS.</b> Letters three to six give CA&mdash;<b>FIVE</b>&mdash;NGUS, so it hides <b>FIVE</b>.",
+    "<b>CUGHUSTER.</b> Checking every run of consecutive letters &mdash; CU, UG, GH, HU, US, ST, TE, ER and the longer ones &mdash; none spells a number, and the name has no O, no I and no W, so ONE, TWO, FIVE, SIX and NINE are all impossible."
+   ],
+   "conclusion": "CUGHUSTER is the only name with no number buried in it, option (2).",
+   "pitfall": "Hunting for a pattern in the endings or the letter counts. The country's name is the instruction: in Numberia, every province but one is built around a number."
   },
   {
    "n": 16,
    "qid": "16",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Pie charts",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Which of the following pie-charts depicts the distribution of students in the five subjects such that physics and chemistry get an equal number of students, $40\\%$ of the total go to the life sciences and the remaining are equally divided into maths and earth sciences?",
+   "options": [
+    "A chart with sectors of about $40\\%$, $25\\%$, $25\\%$, $5\\%$ and $5\\%$.",
+    "A chart with sectors of about $69\\%$, $13\\%$, $8\\%$, $5\\%$ and $5\\%$.",
+    "A chart with sectors of about $40\\%$, $24\\%$, $21\\%$, $10\\%$ and $4\\%$.",
+    "A chart with sectors of about $31\\%$, $29\\%$, $25\\%$, $10\\%$ and $5\\%$."
+   ],
+   "answer": [
+    1
+   ],
+   "given": "Five subjects. Life sciences take exactly $40\\%$. Physics and chemistry are equal to each other. Maths and earth sciences are equal to each other, and together they take what is left.",
+   "concept": "The conditions do not fix the five numbers uniquely; they fix the <em>shape</em> of the chart. What must be visible is one sector of $40\\%$, one matching pair, and a second matching pair.",
+   "steps": [
+    "<b>Write down what the chart must show.</b> Let physics $=$ chemistry $=x$ and maths $=$ earth sciences $=y$. Then $2x + 40 + 2y = 100$, so $x+y=30$. The chart therefore needs a $40\\%$ sector, two equal sectors, and two further equal sectors.",
+    "<b>Test the first chart.</b> Its sectors measure about $40\\%$, $25\\%$, $25\\%$, $5\\%$, $5\\%$. That is a $40\\%$ life-sciences slice, a matching pair at $25$ for physics and chemistry, and a matching pair at $5$ for maths and earth sciences. Also $25+5=30$, as required.",
+    "<b>Reject the second chart.</b> Its largest sector is close to $69\\%$, far from $40\\%$, so the life-sciences condition already fails.",
+    "<b>Reject the third chart.</b> It does have a sector near $40\\%$, but the remaining four are roughly $24$, $21$, $10$ and $4$, with no two equal. Neither matching pair exists.",
+    "<b>Reject the fourth chart.</b> Its sectors run about $31$, $29$, $25$, $10$, $5$, with no sector anywhere near $40\\%$."
+   ],
+   "conclusion": "Only the first chart has the required $40\\%$ sector together with two matching pairs, option (1).",
+   "pitfall": "Expecting the four non-life-science sectors to be $15\\%$ each. The wording pairs physics with chemistry and maths with earth sciences separately, so the two pairs need not equal one another; only $x+y=30$ is forced."
   },
   {
    "n": 17,
    "qid": "17",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Permutations",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "How many 4-digit numbers can be generated from the digits $1, 2, 3, 4, 5$ such that no digit appears more than once, and digit $1$ is always somewhere to the left of the digit $2$?",
+   "options": [
+    "72",
+    "36",
+    "12",
+    "6"
+   ],
+   "answer": [
+    2
+   ],
+   "given": "Four-digit strings built from $\\{1,2,3,4,5\\}$ without repetition, in which both $1$ and $2$ appear and $1$ stands to the left of $2$.",
+   "concept": "Count the arrangements that contain both digits, then halve by symmetry: swapping $1$ and $2$ pairs off the arrangements with $1$ before $2$ against those with $2$ before $1$, so exactly half of them qualify.",
+   "steps": [
+    "<b>Both digits must appear.</b> The condition compares the positions of $1$ and $2$, so both have to be in the number.",
+    "<b>Choose the other two digits.</b> They come from $\\{3,4,5\\}$, giving $\\binom{3}{2}=3$ choices.",
+    "<b>Arrange the four chosen digits.</b> $4! = 24$ orders each, so $3\\times 24 = 72$ numbers contain both $1$ and $2$.",
+    "<b>Halve by symmetry.</b> Interchanging $1$ and $2$ is a bijection between the arrangements with $1$ left of $2$ and those with $2$ left of $1$, so exactly half qualify: $72/2 = 36$."
+   ],
+   "conclusion": "There are <b>36</b> such numbers, option (2).",
+   "pitfall": "Answering $72$, which is the count of numbers containing both digits in either order. The left-of condition cuts that in half."
   },
   {
    "n": 18,
    "qid": "18",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Venn diagrams",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Which one of the following Venn diagrams is <b>NOT</b> consistent with the following statements?<br>All $A$ are $B$; &nbsp; No $D$ is $A$; &nbsp; Some $A$ are $C$.<br><br>(1) $A$ inside $B$, $C$ drawn inside $A$, and $D$ inside $B$ but disjoint from $A$. &nbsp; (2) $A$ inside $B$, $C$ overlapping $A$ and extending beyond it, and $D$ inside $C$ but outside $A$. &nbsp; (3) $A$ and $B$ drawn as the same region, $C$ overlapping it, and $D$ disjoint from everything. &nbsp; (4) $A$ inside $B$, with $C$ and $D$ both inside $B$ but disjoint from $A$.",
+   "options": [
+    "Diagram 1",
+    "Diagram 2",
+    "Diagram 3",
+    "Diagram 4"
+   ],
+   "answer": [
+    4
+   ],
+   "given": "Three statements to be satisfied at once, and four candidate pictures.",
+   "concept": "Test the three statements one at a time against each picture. &ldquo;Some $A$ are $C$&rdquo; is an existential claim: the regions for $A$ and $C$ must actually overlap, and a picture in which they are drawn apart denies it.",
+   "steps": [
+    "<b>Diagram 1.</b> $A$ lies inside $B$, so all $A$ are $B$. $D$ is drawn apart from $A$, so no $D$ is $A$. $C$ lies inside $A$, so every element of $C$ is an $A$ and in particular some $A$ are $C$. All three hold.",
+    "<b>Diagram 2.</b> $A$ inside $B$ gives the first statement. $D$ sits outside $A$, giving the second. $C$ genuinely crosses into $A$, giving the third. All three hold.",
+    "<b>Diagram 3.</b> Drawing $A$ and $B$ as one region makes all $A$ are $B$ true, since $A\\subseteq B$ allows equality. $D$ is disjoint from that region, so no $D$ is $A$. $C$ overlaps it, so some $A$ are $C$. All three hold.",
+    "<b>Diagram 4.</b> The first two statements hold, but $C$ is drawn entirely outside $A$. That says no $A$ is $C$, which directly contradicts &ldquo;Some $A$ are $C$&rdquo;."
+   ],
+   "conclusion": "Diagram 4 is the inconsistent one, option (4).",
+   "pitfall": "Rejecting diagram 3 on the grounds that $A$ and $B$ must be different sets. &ldquo;All $A$ are $B$&rdquo; means $A\\subseteq B$, and a subset is allowed to be the whole set."
   },
   {
    "n": 19,
    "qid": "19",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Geometry of folding",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "A square sheet of $10$ cm sides is folded along its diagonal to form an isosceles right triangle, and then the hypotenuses are folded successively two more times to form isosceles right triangles. What is the length of each equal side after the third folding?",
+   "options": [
+    "0.625 cm",
+    "1.25 cm",
+    "2.5 cm",
+    "5 cm"
+   ],
+   "answer": [
+    4
+   ],
+   "given": "A $10$ cm square. Fold one: along the diagonal. Folds two and three: each halves the current triangle by bringing the ends of its hypotenuse together.",
+   "concept": "Each fold after the first halves the area, and halving the area of a similar figure divides every length by $\\sqrt2$. So the equal sides shrink by a factor $\\sqrt2$ per fold, not by a factor $2$.",
+   "steps": [
+    "<b>Fold one.</b> Folding the square along its diagonal gives an isosceles right triangle whose equal sides are the sides of the square, $10$ cm, with hypotenuse $10\\sqrt2$.",
+    "<b>Set up fold two concretely.</b> Put the right angle at $O=(0,0)$ and the equal sides along the axes to $A=(10,0)$ and $B=(0,10)$. Folding the hypotenuse in half means creasing along $OM$, where $M=(5,5)$ is the midpoint of $AB$; this carries $A$ onto $B$.",
+    "<b>Read off the new triangle.</b> The folded shape is the triangle $OMB$, with $OM = MB = 5\\sqrt2$ and $OB = 10$. Since $\\vec{MO}\\cdot\\vec{MB} = (-5)(-5)+(-5)(5) = 0$, the right angle is at $M$, so it is again isosceles right with equal sides $5\\sqrt2 = 10/\\sqrt2 \\approx 7.07$ cm.",
+    "<b>Fold three.</b> The same operation divides the equal side by $\\sqrt2$ once more: $\\dfrac{10}{\\sqrt2}\\cdot\\dfrac{1}{\\sqrt2} = \\dfrac{10}{2} = 5$ cm.",
+    "<b>Summarise the pattern.</b> The equal sides run $10$, $10/\\sqrt2$, $5$ after folds one, two and three, each fold halving the area."
+   ],
+   "conclusion": "After the third folding each equal side is <b>5 cm</b>, option (4).",
+   "pitfall": "Halving the side at every fold to get $10, 5, 2.5$ and answering $2.5$ cm. Halving the <em>area</em> divides lengths by $\\sqrt2$; the side is halved only after two folds."
   },
   {
    "n": 20,
    "qid": "20",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Linear equations",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "A water bottle costs &#8377;$20$ that includes the cost of the bottle. If the water costs &#8377;$15$ more than the bottle, then what is the cost of the bottle?",
+   "options": [
+    "&#8377;2.50",
+    "&#8377;5",
+    "&#8377;7.50",
+    "&#8377;10"
+   ],
+   "answer": [
+    1
+   ],
+   "given": "Water plus bottle costs $20$; the water costs $15$ more than the bottle.",
+   "concept": "Two unknowns, two equations. The trap is to read &ldquo;$15$ more&rdquo; as though the water simply cost $15$, which would make the bottle $5$ and the gap only $10$.",
+   "steps": [
+    "<b>Name the unknowns.</b> Let $b$ be the cost of the bottle and $w$ the cost of the water, in rupees.",
+    "<b>Write the equations.</b> $b + w = 20$ and $w = b + 15$.",
+    "<b>Substitute.</b> $b + (b+15) = 20$, so $2b + 15 = 20$ and $2b = 5$.",
+    "<b>Solve and check.</b> $b = 2.50$, hence $w = 17.50$. The total is $20$ and the difference is $17.50-2.50 = 15$, as required."
+   ],
+   "conclusion": "The bottle costs <b>&#8377;2.50</b>, option (1).",
+   "pitfall": "Answering &#8377;$5$ by taking the water to cost &#8377;$15$. Then the water would exceed the bottle by only &#8377;$10$, not &#8377;$15$."
   },
   {
    "n": 21,
-   "qid": "21",
+   "qid": "704101",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Combinatorics",
+   "subtopic": "Counting injections",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "What is the number of injective functions from $\\{1,2,\\ldots,7\\}$ to $\\{1,2,\\ldots,10\\}$?",
+   "options": [
+    "$10^{7}$",
+    "$\\dfrac{10!}{7!}$",
+    "$\\dfrac{10!}{3!}$",
+    "$7^{10}$"
+   ],
+   "answer": [
+    3
+   ],
+   "given": "Injective (one-to-one) maps from a $7$-element set into a $10$-element set.",
+   "concept": "Building an injection means choosing images one domain element at a time, each time avoiding the values already used. That is a falling factorial, which equals $\\frac{10!}{(10-7)!}$.",
+   "steps": [
+    "<b>Choose images in turn.</b> The image of $1$ can be any of $10$ values; the image of $2$ any of the remaining $9$; and so on down to the image of $7$, which has $10-6=4$ choices.",
+    "<b>Multiply.</b> The count is $$10\\times 9\\times 8\\times 7\\times 6\\times 5\\times 4 = 604800.$$",
+    "<b>Write it as a factorial ratio.</b> That product is $\\dfrac{10!}{3!}$, since dividing $10!$ by $3! = 3\\times2\\times1$ removes exactly the last three factors.",
+    "<b>Check the other options.</b> $10^{7}$ counts <em>all</em> functions, injective or not; $\\frac{10!}{7!} = 10\\times9\\times8 = 720$ is far too small; and $7^{10}$ counts functions in the wrong direction, from a $10$-element set to a $7$-element one."
+   ],
+   "conclusion": "The number of injections is $\\dfrac{10!}{3!}$, option (3).",
+   "pitfall": "Writing $\\frac{10!}{7!}$ by reflex because the domain has $7$ elements. The factorial you divide by is $(10-7)! = 3!$, built from the size of the <em>unused</em> part of the codomain."
   },
   {
    "n": 22,
-   "qid": "22",
+   "qid": "704102",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -544,7 +643,7 @@
   },
   {
    "n": 23,
-   "qid": "23",
+   "qid": "704103",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -560,7 +659,7 @@
   },
   {
    "n": 24,
-   "qid": "24",
+   "qid": "704104",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -576,7 +675,7 @@
   },
   {
    "n": 25,
-   "qid": "25",
+   "qid": "704105",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -592,7 +691,7 @@
   },
   {
    "n": 26,
-   "qid": "26",
+   "qid": "704106",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -608,7 +707,7 @@
   },
   {
    "n": 27,
-   "qid": "27",
+   "qid": "704107",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -624,7 +723,7 @@
   },
   {
    "n": 28,
-   "qid": "28",
+   "qid": "704108",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -640,7 +739,7 @@
   },
   {
    "n": 29,
-   "qid": "29",
+   "qid": "704109",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -656,7 +755,7 @@
   },
   {
    "n": 30,
-   "qid": "30",
+   "qid": "704110",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -672,7 +771,7 @@
   },
   {
    "n": 31,
-   "qid": "31",
+   "qid": "704111",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -688,7 +787,7 @@
   },
   {
    "n": 32,
-   "qid": "32",
+   "qid": "704112",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -704,7 +803,7 @@
   },
   {
    "n": 33,
-   "qid": "33",
+   "qid": "704113",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -720,7 +819,7 @@
   },
   {
    "n": 34,
-   "qid": "34",
+   "qid": "704114",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -736,7 +835,7 @@
   },
   {
    "n": 35,
-   "qid": "35",
+   "qid": "704115",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -752,7 +851,7 @@
   },
   {
    "n": 36,
-   "qid": "36",
+   "qid": "704116",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -768,7 +867,7 @@
   },
   {
    "n": 37,
-   "qid": "37",
+   "qid": "704117",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -784,7 +883,7 @@
   },
   {
    "n": 38,
-   "qid": "38",
+   "qid": "704118",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -800,7 +899,7 @@
   },
   {
    "n": 39,
-   "qid": "39",
+   "qid": "704119",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -816,7 +915,7 @@
   },
   {
    "n": 40,
-   "qid": "40",
+   "qid": "704120",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -832,7 +931,7 @@
   },
   {
    "n": 41,
-   "qid": "41",
+   "qid": "704121",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -848,7 +947,7 @@
   },
   {
    "n": 42,
-   "qid": "42",
+   "qid": "704122",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -864,7 +963,7 @@
   },
   {
    "n": 43,
-   "qid": "43",
+   "qid": "704123",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -880,7 +979,7 @@
   },
   {
    "n": 44,
-   "qid": "44",
+   "qid": "704124",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -896,7 +995,7 @@
   },
   {
    "n": 45,
-   "qid": "45",
+   "qid": "704125",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -912,7 +1011,7 @@
   },
   {
    "n": 46,
-   "qid": "46",
+   "qid": "704126",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -928,7 +1027,7 @@
   },
   {
    "n": 47,
-   "qid": "47",
+   "qid": "704127",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -944,7 +1043,7 @@
   },
   {
    "n": 48,
-   "qid": "48",
+   "qid": "704128",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -960,7 +1059,7 @@
   },
   {
    "n": 49,
-   "qid": "49",
+   "qid": "704129",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -976,7 +1075,7 @@
   },
   {
    "n": 50,
-   "qid": "50",
+   "qid": "704130",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -992,7 +1091,7 @@
   },
   {
    "n": 51,
-   "qid": "51",
+   "qid": "704131",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1008,7 +1107,7 @@
   },
   {
    "n": 52,
-   "qid": "52",
+   "qid": "704132",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1024,7 +1123,7 @@
   },
   {
    "n": 53,
-   "qid": "53",
+   "qid": "704133",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1040,7 +1139,7 @@
   },
   {
    "n": 54,
-   "qid": "54",
+   "qid": "704134",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1056,7 +1155,7 @@
   },
   {
    "n": 55,
-   "qid": "55",
+   "qid": "704135",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1072,7 +1171,7 @@
   },
   {
    "n": 56,
-   "qid": "56",
+   "qid": "704136",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1088,7 +1187,7 @@
   },
   {
    "n": 57,
-   "qid": "57",
+   "qid": "704137",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1104,7 +1203,7 @@
   },
   {
    "n": 58,
-   "qid": "58",
+   "qid": "704138",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1120,7 +1219,7 @@
   },
   {
    "n": 59,
-   "qid": "59",
+   "qid": "704139",
    "part": "B",
    "topic": "",
    "subtopic": "",
@@ -1136,7 +1235,7 @@
   },
   {
    "n": 60,
-   "qid": "60",
+   "qid": "704140",
    "part": "B",
    "topic": "",
    "subtopic": "",
