@@ -149,145 +149,254 @@
    "n": 5,
    "qid": "5",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Regression and correlation",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "The given figure shows data points and a line fit by the least squares method between profit in an ice-cream business and mean temperature $T$ for a city. The fitted line is $\\text{Profit} = 4T - 86$ and the correlation coefficient is $r = 0.83$. Which one of the following inferences can definitely be drawn?",
+   "options": [
+    "The sum of the squared values of differences between the observed and expected values of temperature is the minimum.",
+    "$83\\%$ of the variation in profit is explained by the variation in temperature.",
+    "Rise in temperature causes profit to increase.",
+    "At $25^\\circ$C, estimated profit is $14$ million &#8377;."
+   ],
+   "answer": [
+    4
+   ],
+   "given": "A least-squares line $\\text{Profit}=4T-86$ with profit in millions of rupees and $T$ in degrees Celsius, together with $r=0.83$.",
+   "concept": "Only what the fitted equation itself asserts is safe. Least squares minimises residuals in the <em>response</em>, the proportion of variance explained is $r^2$ and not $r$, and correlation never establishes causation.",
+   "steps": [
+    "<b>Test option (4) by substituting.</b> $\\text{Profit}=4(25)-86 = 100-86 = 14$ million rupees. This is exactly what the fitted line predicts at $T=25$, so the statement is true by arithmetic.",
+    "<b>Reject option (1).</b> Ordinary least squares minimises $\\sum(y_i-\\hat y_i)^2$, the squared deviations in <em>profit</em>, the dependent variable. The statement refers to deviations in temperature, which the fit does not minimise.",
+    "<b>Reject option (2).</b> The fraction of variation explained is the coefficient of determination $r^{2}=(0.83)^{2}\\approx 0.69$, so about $69\\%$, not $83\\%$.",
+    "<b>Reject option (3).</b> A correlation of $0.83$ shows the two move together, but the data are observational. Hot weather and ice-cream profit could share a common cause, and nothing in a regression line rules that out."
+   ],
+   "conclusion": "Only the prediction at $25^\\circ$C follows definitely, option (4).",
+   "pitfall": "Reading $r=0.83$ as &ldquo;$83\\%$ explained&rdquo;. The explained fraction is $r^2$, which here is about $69\\%$; the two agree only when $r$ is $0$ or $1$."
   },
   {
    "n": 6,
    "qid": "6",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Averages",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "The average of seven numbers is $71$. If we exclude one of these numbers, the average becomes $75$. What is that number?",
+   "options": [
+    "75",
+    "74",
+    "73",
+    "47"
+   ],
+   "answer": [
+    4
+   ],
+   "given": "Seven numbers averaging $71$; after one is removed the remaining six average $75$.",
+   "concept": "Convert each average into a total. The removed number is simply the difference of the two totals.",
+   "steps": [
+    "<b>Total of all seven.</b> $7\\times 71 = 497$.",
+    "<b>Total of the remaining six.</b> $6\\times 75 = 450$.",
+    "<b>Subtract.</b> The excluded number is $497-450 = 47$.",
+    "<b>Check.</b> Removing $47$, a number well below the old average, should pull the average up, and it does: from $71$ to $75$."
+   ],
+   "conclusion": "The number is <b>47</b>, option (4).",
+   "pitfall": "Expecting the answer to sit near $71$ or $75$ and picking $73$. Removing one value from seven moves the mean a long way, so the removed value must be far from both averages."
   },
   {
    "n": 7,
    "qid": "7",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Self-referential statements",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Choose the option to fill in the blank that will make the following statement logically correct:<br><br>THE NUMBER OF OCCURRENCES OF THE LETTER &ldquo;N&rdquo; IN THIS SENTENCE IS CORRECTLY COUNTED AS ________ .",
+   "options": [
+    "SIX",
+    "SEVEN",
+    "EIGHT",
+    "NINE"
+   ],
+   "answer": [
+    4
+   ],
+   "given": "A self-referential sentence: the word placed in the blank becomes part of the sentence being counted.",
+   "concept": "Count the N's in the fixed part once, then test each candidate, remembering that the candidate word contributes its own N's to the total it claims.",
+   "steps": [
+    "<b>Count the N's in the fixed part.</b> NUMBER contributes $1$, OCCURRENCES $1$, the quoted letter &ldquo;N&rdquo; $1$, IN $1$, SENTENCE $2$, COUNTED $1$. That is $7$ before the blank is filled.",
+    "<b>Test SIX.</b> SIX contains no N, so the total stays $7$, but the sentence claims $6$. False.",
+    "<b>Test SEVEN.</b> SEVEN contains one N, so the total becomes $8$, while the sentence claims $7$. False.",
+    "<b>Test EIGHT.</b> EIGHT contains no N, so the total stays $7$, while the sentence claims $8$. False.",
+    "<b>Test NINE.</b> NINE contains two N's, so the total becomes $7+2 = 9$, and the sentence claims $9$. True."
+   ],
+   "conclusion": "The blank must read <b>NINE</b>, option (4).",
+   "pitfall": "Counting the fixed part, getting $7$, and answering SEVEN. Writing SEVEN into the blank adds an N of its own and makes the count $8$, so the sentence refutes itself."
   },
   {
    "n": 8,
    "qid": "8",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Counting and graphs",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "In a board meeting of $20$ directors, $6$ shook everyone else&rsquo;s hands but the remaining $14$ did not shake each another&rsquo;s. The total number of handshakes in the meeting was",
+   "options": [
+    "26",
+    "84",
+    "99",
+    "190"
+   ],
+   "answer": [
+    3
+   ],
+   "given": "Twenty people. Six of them shook hands with all nineteen others. The other fourteen shook hands only with those six, never among themselves.",
+   "concept": "Split the handshakes into three groups by who is involved: both from the sociable six, one from each side, or both from the fourteen. Count each group separately so no handshake is counted twice.",
+   "steps": [
+    "<b>Within the six.</b> Every pair among the six shook hands: $\\binom{6}{2}=15$.",
+    "<b>Between the six and the fourteen.</b> Each of the six shook hands with each of the fourteen: $6\\times 14 = 84$.",
+    "<b>Within the fourteen.</b> None, by hypothesis: $0$.",
+    "<b>Add.</b> $15+84+0 = 99$."
+   ],
+   "conclusion": "There were <b>99</b> handshakes, option (3).",
+   "pitfall": "Answering $6\\times 19 = 114$ or $\\binom{20}{2}=190$. The first double-counts the handshakes among the six; the second assumes everyone shook everyone's hand, which the fourteen did not."
   },
   {
    "n": 9,
    "qid": "9",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Sequencing",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Choose the correct chronological order of the following:<br>A: match, &nbsp; B: trophy, &nbsp; C: toss, &nbsp; D: result.",
+   "options": [
+    "C, A, D, B",
+    "A, D, B, C",
+    "C, B, A, D",
+    "D, C, B, A"
+   ],
+   "answer": [
+    1
+   ],
+   "given": "Four stages of a sporting fixture, to be put in the order in which they occur.",
+   "concept": "Order the events by what each one depends on: the toss decides how the match starts, the result exists only once the match is over, and the trophy is awarded on the strength of the result.",
+   "steps": [
+    "<b>The toss comes first.</b> It is held before play begins, so C leads.",
+    "<b>Then the match.</b> Play follows the toss: A.",
+    "<b>Then the result.</b> A result exists only after the match finishes: D.",
+    "<b>The trophy last.</b> It is presented on the basis of the result: B."
+   ],
+   "conclusion": "The order is C, A, D, B, option (1).",
+   "pitfall": "Placing the trophy before the result because it feels like the climax of the event. The presentation depends on the result, so it cannot precede it."
   },
   {
    "n": 10,
    "qid": "10",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Mensuration",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "A spherical ball is placed inside a cubic box. If the diameter of the ball is same as the sides of the box, what approximate percentage of volume will be empty?",
+   "options": [
+    "$12\\%$",
+    "$24\\%$",
+    "$36\\%$",
+    "$48\\%$"
+   ],
+   "answer": [
+    4
+   ],
+   "given": "A sphere inscribed in a cube, so the sphere's diameter equals the cube's edge.",
+   "concept": "Take the edge as $a$, compute both volumes in terms of $a$, and the ratio is a pure number: the $a^3$ cancels, so the answer does not depend on the size of the box.",
+   "steps": [
+    "<b>Volume of the cube.</b> With edge $a$, it is $a^{3}$.",
+    "<b>Volume of the ball.</b> The diameter is $a$, so the radius is $a/2$ and $$V_{\\text{sphere}}=\\frac{4}{3}\\pi\\left(\\frac{a}{2}\\right)^{3}=\\frac{\\pi a^{3}}{6}.$$",
+    "<b>Fraction occupied.</b> $\\dfrac{V_{\\text{sphere}}}{V_{\\text{cube}}}=\\dfrac{\\pi}{6}\\approx 0.5236$, about $52.4\\%$.",
+    "<b>Fraction empty.</b> $1-\\dfrac{\\pi}{6}\\approx 0.4764$, that is about $48\\%$."
+   ],
+   "conclusion": "About $\\mathbf{48\\%}$ of the box is empty, option (4).",
+   "pitfall": "Using the radius as $a$ instead of $a/2$, which makes the sphere larger than the box. The diameter equals the edge, so the radius is half of it."
   },
   {
    "n": 11,
    "qid": "11",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Direction sense",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "If I walked east $100$ metres, turned right and walked $60$ metres, turned left and walked $150$ metres and turned left again, I would be facing",
+   "options": [
+    "East",
+    "North",
+    "West",
+    "South"
+   ],
+   "answer": [
+    2
+   ],
+   "given": "A walk starting eastward, with a right turn, then a left turn, then another left turn. Turns are quarter-turns.",
+   "concept": "Only the turns matter; the distances are irrelevant to the final heading. Track the facing direction one turn at a time.",
+   "steps": [
+    "<b>Start.</b> Facing east.",
+    "<b>Turn right.</b> From east, a right turn faces south. Walk $60$ m.",
+    "<b>Turn left.</b> From south, a left turn faces east again. Walk $150$ m.",
+    "<b>Turn left again.</b> From east, a left turn faces north."
+   ],
+   "conclusion": "I would be facing <b>north</b>, option (2).",
+   "pitfall": "Trying to track the position as well and getting lost in the arithmetic. The question asks only for the heading, and the three distances never enter the answer."
   },
   {
    "n": 12,
    "qid": "12",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Coding and decoding",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "The words TEST, EXAM and EAST are coded as $1382$, $2182$ and $1937$ but not necessarily in that order. How would the word MATE be coded?",
+   "options": [
+    "9321",
+    "7321",
+    "7312",
+    "1982"
+   ],
+   "answer": [
+    2
+   ],
+   "given": "Three four-letter words and three four-digit codes, with the pairing unknown.",
+   "concept": "Match on structure before matching on letters. TEST is the only word with a repeated letter, and it repeats in the first and fourth positions, so its code must repeat a digit in exactly those places.",
+   "steps": [
+    "<b>Use the repetition pattern.</b> TEST has T in positions $1$ and $4$. Among the codes, only $2182$ has equal first and last digits. Hence TEST $=2182$, giving $\\mathrm{T}=2$, $\\mathrm{E}=1$, $\\mathrm{S}=8$.",
+    "<b>Place EAST.</b> With $\\mathrm{E}=1$, $\\mathrm{S}=8$, $\\mathrm{T}=2$, the code for EAST must read $1\\,?\\,8\\,2$. That matches $1382$, so $\\mathrm{A}=3$.",
+    "<b>Confirm with EXAM.</b> The remaining code is $1937$, and EXAM must start with $\\mathrm{E}=1$ and have $\\mathrm{A}=3$ in the third place. $1937$ fits exactly, giving $\\mathrm{X}=9$ and $\\mathrm{M}=7$.",
+    "<b>Encode MATE.</b> $\\mathrm{M}=7$, $\\mathrm{A}=3$, $\\mathrm{T}=2$, $\\mathrm{E}=1$, so MATE $=7321$."
+   ],
+   "conclusion": "MATE is coded <b>7321</b>, option (2).",
+   "pitfall": "Assuming the codes are listed in the same order as the words. The question says otherwise, and pairing TEST with $1382$ makes the whole substitution inconsistent."
   },
   {
    "n": 13,
    "qid": "13",
    "part": "A",
-   "topic": "",
-   "subtopic": "",
+   "topic": "General Aptitude",
+   "subtopic": "Logical deduction",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "All those who pass an entrance test take admission into a certain institute. Out of these, some graduate with a degree in $2$ years while some fail and are removed, and all graduates from that institute get jobs in the same year. In $2022$, no one took admission in that institute. Which of the following does <b>NOT</b> follow necessarily?",
+   "options": [
+    "No one wrote the entrance test in 2022",
+    "No one passed the entrance test in 2022",
+    "No one graduated from the institute in 2024",
+    "No one got a job from the institute in 2024"
+   ],
+   "answer": [
+    1
+   ],
+   "given": "Passing implies admission; a degree takes two years; every graduate is employed in the year of graduating; and there were no admissions in $2022$.",
+   "concept": "Each true statement here comes from a contrapositive. Writing the test is upstream of passing, and nothing in the premises links writing to admission, so that is the one that escapes.",
+   "steps": [
+    "<b>Statement (2) follows.</b> &ldquo;Passes $\\Rightarrow$ admitted&rdquo; contraposes to &ldquo;not admitted $\\Rightarrow$ did not pass&rdquo;. With no admissions in $2022$, nobody passed in $2022$.",
+    "<b>Statement (3) follows.</b> A degree takes two years, so a $2024$ graduate must have been admitted in $2022$. There were no such admissions, so there are no $2024$ graduates.",
+    "<b>Statement (4) follows.</b> Jobs come only through graduating, in the same year. With no graduates in $2024$, nobody got a job from the institute that year.",
+    "<b>Statement (1) does not follow.</b> Any number of candidates could have written the test in $2022$ and every one of them failed. Failing is consistent with no admissions, so the premises say nothing about who sat the test."
+   ],
+   "conclusion": "Statement (1) is the one that does not follow, option (1).",
+   "pitfall": "Reading &ldquo;no one took admission&rdquo; as &ldquo;nothing happened&rdquo;. The premises constrain only what follows <em>after</em> passing; the act of writing the test is left completely open."
   },
   {
    "n": 14,
