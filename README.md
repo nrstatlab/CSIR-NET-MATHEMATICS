@@ -29,15 +29,28 @@ Paper pages are **generated, never hand-written**. All content lives in
 papers-inbox/<paper>.pdf     raw source, archived
 data/papers/<slug>.json      questions, options, answers, worked steps
 tools/build.py               generator (Python standard library only)
+tools/check.py               validator, run before every commit
 papers/<slug>.html           generated output — do not edit
 papers/index.html            generated index — do not edit
 ```
 
-Rebuild after any edit to the JSON:
+Rebuild after any edit to the JSON, then validate before committing:
 
 ```bash
 python3 tools/build.py
+python3 tools/check.py
 ```
+
+`tools/check.py` is the gate. It verifies that every question has balanced `$`
+delimiters and no LaTeX escapes stranded outside math mode, that each recorded
+answer indexes an option that exists, that every generated page has well-formed
+tag nesting, and that every internal link resolves. It exits non-zero and names
+what to fix.
+
+Write mathematics naturally in the JSON, including `<` and `>` as comparison
+operators. The generator escapes them inside `$...$` spans, which it must: the
+browser parses HTML before MathJax runs, so a bare `<` in `$x<x_0$` would open
+a tag and swallow the rest of the line.
 
 A question with an empty `body` or empty `answer` is treated as not yet solved and is
 omitted from the published page, so a long paper can go up in instalments without ever

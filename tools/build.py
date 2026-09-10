@@ -9,6 +9,7 @@ papers/ plus the papers index are rewritten. See HOW-TO-ADD-A-PAPER.md.
 import html
 import json
 import pathlib
+import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -42,6 +43,30 @@ window.MathJax = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>"""
+
+
+_MATH = re.compile(r"\$\$.*?\$\$|\$[^$]*\$", re.S)
+
+
+def esc_math(text):
+    """Escape < and > inside TeX spans.
+
+    The browser parses HTML before MathJax ever sees the page, so a bare "<"
+    in "$x<x_0$" opens a tag and swallows the rest of the line. Inside a math
+    span the characters are always operators, never markup, so escaping them
+    is safe; the entities are decoded back to "<" and ">" before MathJax reads
+    the text node. Outside math spans the text is left alone, because that is
+    where the real markup lives.
+    """
+    def fix(m):
+        return m.group(0).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    return _MATH.sub(fix, text)
+
+
+def field(q, key):
+    """One text field of a question, math-escaped."""
+    value = q.get(key)
+    return esc_math(value) if value else value
 
 
 def head(title, description, canonical, up, here, extra=""):
@@ -129,18 +154,18 @@ REVEAL_JS = """<script>
 def render_steps(q):
     bits = []
     if q.get("given"):
-        bits.append(f'<div class="concept"><b>What is given.</b> {q["given"]}</div>')
+        bits.append(f'<div class="concept"><b>What is given.</b> {field(q, "given")}</div>')
     if q.get("concept"):
-        bits.append(f'<div class="concept"><b>Idea used.</b> {q["concept"]}</div>')
+        bits.append(f'<div class="concept"><b>Idea used.</b> {field(q, "concept")}</div>')
     steps = q.get("steps") or []
     if steps:
         bits.append('<ol class="steps">')
-        bits.extend(f"<li>{s}</li>" for s in steps)
+        bits.extend(f"<li>{esc_math(s)}</li>" for s in steps)
         bits.append("</ol>")
     if q.get("conclusion"):
-        bits.append(f"<p>{q['conclusion']}</p>")
+        bits.append(f"<p>{field(q, 'conclusion')}</p>")
     if q.get("pitfall"):
-        bits.append(f'<div class="pitfall"><b>Common slip.</b> {q["pitfall"]}</div>')
+        bits.append(f'<div class="pitfall"><b>Common slip.</b> {field(q, "pitfall")}</div>')
     return "\n".join(bits)
 
 
@@ -163,12 +188,12 @@ def render_question(q):
     topic = q.get("topic", "")
     o = [f'<div class="mcq" id="q{q["n"]}" data-topic="{html.escape(topic)}">']
     qid = f'<span class="qid">ID {html.escape(str(q.get("qid","")))}</span>' if q.get("qid") else ""
-    o.append(f'<div class="q">{qid}<span class="qn">Q{q["n"]}.</span> {q["body"]}</div>')
+    o.append(f'<div class="q">{qid}<span class="qn">Q{q["n"]}.</span> {field(q, "body")}</div>')
     if q.get("options"):
         o.append('<ol class="options">')
         for i, opt in enumerate(q["options"], 1):
             cls = ' class="correct"' if i in ans else ""
-            o.append(f"<li{cls}>{opt}</li>")
+            o.append(f"<li{cls}>{esc_math(opt)}</li>")
         o.append("</ol>")
     o.append("<details><summary>Show step-by-step solution</summary>")
     o.append(f'<p class="verdict"><b>{answer_label(q)}</b></p>')

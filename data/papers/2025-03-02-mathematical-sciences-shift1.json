@@ -625,113 +625,202 @@
    "n": 22,
    "qid": "706502",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Real Analysis",
+   "subtopic": "limsup and liminf",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Let $(x_n)_{n\\ge 1}$ be a sequence of real numbers that has a decreasing subsequence $(x_{n_k})_{k\\ge 1}$. Assume that $$\\lim_{k\\to\\infty} x_{n_k} = 2025.$$ Which of the following statements is necessarily true?",
+   "options": [
+    "$\\displaystyle\\liminf_{n\\to\\infty} x_n \\ge 2025$",
+    "$\\displaystyle\\limsup_{n\\to\\infty} x_n \\le 2025$",
+    "$\\displaystyle\\liminf_{n\\to\\infty} x_n \\le 2025$",
+    "$\\displaystyle\\liminf_{k\\to\\infty} x_{n_k} > 2025$"
+   ],
+   "answer": [
+    3
+   ],
+   "given": "Nothing about $(x_n)$ except that <em>one</em> of its subsequences is decreasing and tends to $2025$. The other terms are completely unconstrained.",
+   "concept": "$\\liminf_{n} x_n$ is the smallest subsequential limit and $\\limsup_n x_n$ the largest. So every subsequential limit $L$ satisfies $\\liminf x_n \\le L \\le \\limsup x_n$. Only the inequality pointing the right way survives.",
+   "steps": [
+    "<b>Locate 2025 among the subsequential limits.</b> Since $x_{n_k}\\to 2025$, the value $2025$ is a subsequential limit of $(x_n)$.",
+    "<b>Apply the extremal characterisation.</b> The limit inferior is the infimum of the set of subsequential limits, so $\\liminf_{n\\to\\infty} x_n \\le 2025$. That is exactly statement (3), and it needed no extra hypothesis.",
+    "<b>Kill statement (1) with an example.</b> Put $x_n = 2025 + \\tfrac1n$ for even $n$ and $x_n = -n$ for odd $n$. The even-indexed terms form a decreasing subsequence tending to $2025$, yet $\\liminf x_n = -\\infty$.",
+    "<b>Kill statement (2) the same way.</b> Put $x_n = 2025+\\tfrac1n$ for even $n$ and $x_n = n$ for odd $n$. The hypothesis still holds but $\\limsup x_n = +\\infty$.",
+    "<b>Kill statement (4).</b> The subsequence converges, so $\\liminf_{k} x_{n_k} = \\lim_k x_{n_k} = 2025$, which is not strictly greater than $2025$."
+   ],
+   "conclusion": "Only statement (3) is forced, so the answer is option (3).",
+   "pitfall": "Reasoning that a decreasing subsequence with limit $2025$ has all its terms $\\ge 2025$, and concluding that the whole sequence is bounded below by $2025$. The hypothesis controls one subsequence only; every other term is free."
   },
   {
    "n": 23,
    "qid": "706503",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Real Analysis",
+   "subtopic": "Convergence of sequences",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Consider the sequences $(a_n)_{n\\ge1}$ and $(b_n)_{n\\ge1}$, defined by $$a_n = -2\\sqrt{n} + \\sum_{k=1}^{n}\\frac{1}{\\sqrt{k}} \\quad\\text{and}\\quad b_n = -2\\sqrt{n+1} + \\sum_{k=1}^{n}\\frac{1}{\\sqrt{k}}.$$ Which of the following statements is true?",
+   "options": [
+    "$(a_n)_{n\\ge1}$ converges but $(b_n)_{n\\ge1}$ does not converge.",
+    "$(b_n)_{n\\ge1}$ converges but $(a_n)_{n\\ge1}$ does not converge.",
+    "Both $(a_n)_{n\\ge1}$ and $(b_n)_{n\\ge1}$ converge.",
+    "Neither $(a_n)_{n\\ge1}$ nor $(b_n)_{n\\ge1}$ converges."
+   ],
+   "answer": [
+    3
+   ],
+   "given": "The same partial sum $\\sum_{k\\le n} k^{-1/2}$ corrected by $-2\\sqrt n$ in one case and by $-2\\sqrt{n+1}$ in the other.",
+   "concept": "$2\\sqrt n$ is the integral approximation to $\\sum_{k\\le n}k^{-1/2}$, so both sequences measure the same error term. Show one is decreasing, the other increasing, and that they squeeze each other; monotone plus bounded gives convergence.",
+   "steps": [
+    "<b>The two sequences differ by a null term.</b> $$a_n-b_n = 2\\sqrt{n+1}-2\\sqrt n = \\frac{2}{\\sqrt{n+1}+\\sqrt n}\\longrightarrow 0 .$$ So they converge or diverge together, which already rules out options (1) and (2).",
+    "<b>$(a_n)$ is decreasing.</b> $$a_{n+1}-a_n=\\frac{1}{\\sqrt{n+1}}-2\\bigl(\\sqrt{n+1}-\\sqrt n\\bigr)=\\frac{1}{\\sqrt{n+1}}-\\frac{2}{\\sqrt{n+1}+\\sqrt n}.$$ Since $\\sqrt{n+1}+\\sqrt n < 2\\sqrt{n+1}$, the subtracted fraction exceeds $\\tfrac1{\\sqrt{n+1}}$, so $a_{n+1}-a_n<0$.",
+    "<b>$(b_n)$ is increasing.</b> $$b_{n+1}-b_n=\\frac{1}{\\sqrt{n+1}}-\\frac{2}{\\sqrt{n+2}+\\sqrt{n+1}},$$ and now $\\sqrt{n+2}+\\sqrt{n+1} > 2\\sqrt{n+1}$, so the subtracted fraction is smaller than $\\tfrac1{\\sqrt{n+1}}$ and $b_{n+1}-b_n>0$.",
+    "<b>They bound each other.</b> From step 1, $a_n > b_n$ for every $n$. Hence $a_n > b_n \\ge b_1 = 1-2\\sqrt2$, so the decreasing sequence $(a_n)$ is bounded below; and $b_n < a_n \\le a_1 = -1$, so the increasing sequence $(b_n)$ is bounded above.",
+    "<b>Apply monotone convergence.</b> A decreasing sequence bounded below converges, and an increasing sequence bounded above converges. Both limits are equal, since $a_n-b_n\\to0$; the common value is $\\zeta(1/2)\\approx -1.4604$."
+   ],
+   "conclusion": "Both sequences converge, option (3).",
+   "pitfall": "Noticing that $\\sum k^{-1/2}$ diverges and concluding that both sequences diverge. The subtracted term $2\\sqrt n$ diverges at exactly the same rate; what is left over is the bounded error of the integral approximation."
   },
   {
    "n": 24,
    "qid": "706504",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Real Analysis",
+   "subtopic": "Continuous functions on the line",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Let $f:\\mathbb{R}\\to\\mathbb{R}$ be a non-constant continuous function. Which of the following statements is necessarily true?",
+   "options": [
+    "For every bounded subset $A\\subseteq\\mathbb{R}$, $f^{-1}(A)$ is a bounded subset of $\\mathbb{R}$.",
+    "For every Cauchy sequence $(x_n)_{n\\ge1}$ in $\\mathbb{R}$, $(f(x_n))_{n\\ge1}$ is a Cauchy sequence in $\\mathbb{R}$.",
+    "There exists $x\\in\\mathbb{R}$ such that $f(x)=x$.",
+    "There exists $x\\in\\mathbb{R}$ such that $f(x)=0$."
+   ],
+   "answer": [
+    2
+   ],
+   "given": "Only that $f$ is continuous on all of $\\mathbb{R}$ and not constant.",
+   "concept": "$\\mathbb{R}$ is complete, so a Cauchy sequence is exactly a convergent one. Continuity then carries convergence across, and the image sequence converges, hence is Cauchy. The other three options each fail on a one-line example.",
+   "steps": [
+    "<b>Prove statement (2).</b> Let $(x_n)$ be Cauchy in $\\mathbb{R}$. By completeness $x_n\\to x$ for some $x\\in\\mathbb{R}$. Continuity of $f$ at $x$ gives $f(x_n)\\to f(x)$, and a convergent sequence in $\\mathbb{R}$ is Cauchy.",
+    "<b>Refute (1).</b> Take $f(x)=\\sin x$, which is continuous and non-constant. With $A=[-1,1]$, bounded, $f^{-1}(A)=\\mathbb{R}$ is unbounded.",
+    "<b>Refute (3).</b> Take $f(x)=x+1$. It is continuous and non-constant, and $f(x)=x$ would force $1=0$.",
+    "<b>Refute (4).</b> Take $f(x)=e^{x}$, continuous and non-constant, which is strictly positive everywhere."
+   ],
+   "conclusion": "Only statement (2) is necessarily true, option (2).",
+   "pitfall": "Assuming a Cauchy sequence must be handled by <em>uniform</em> continuity, which is the right instinct on a general metric space. On $\\mathbb{R}$ completeness makes plain continuity enough, because the sequence already has a limit inside the domain."
   },
   {
    "n": 25,
    "qid": "706505",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Real Analysis",
+   "subtopic": "Continuous injections and intervals",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Let $f:\\mathbb{R}\\to[0,\\infty)$ be a bijective function. Which of the following statements is true?",
+   "options": [
+    "$f$ is monotone.",
+    "$f$ is continuous but not strictly monotone.",
+    "$f$ is not continuous.",
+    "$f$ is continuous but not uniformly continuous."
+   ],
+   "answer": [
+    3
+   ],
+   "given": "$f$ is a bijection from the open line $\\mathbb{R}$ onto the half-line $[0,\\infty)$, which contains its endpoint $0$.",
+   "concept": "A continuous injection on an interval is strictly monotone, and a strictly monotone continuous map sends the open interval $\\mathbb{R}$ onto an <em>open</em> interval. Since $[0,\\infty)$ is not open in $\\mathbb{R}$, no such $f$ can be continuous.",
+   "steps": [
+    "<b>Suppose $f$ were continuous.</b> Being a bijection it is injective, and a continuous injective function on an interval is strictly monotone. This is the intermediate value theorem applied to any three points that would violate monotonicity.",
+    "<b>Identify the image.</b> If $f$ is strictly increasing and continuous on $\\mathbb{R}$, then $$f(\\mathbb{R}) = \\Bigl(\\lim_{x\\to-\\infty}f(x),\\ \\lim_{x\\to+\\infty}f(x)\\Bigr),$$ an <em>open</em> interval (allowing $\\pm\\infty$ as endpoints). The strictly decreasing case is the same with the ends swapped.",
+    "<b>Compare with the target.</b> $[0,\\infty)$ contains its left endpoint $0$, so it is not an open interval. Hence a continuous bijection $\\mathbb{R}\\to[0,\\infty)$ cannot exist, and options (2) and (4) are impossible.",
+    "<b>Rule out monotonicity as well.</b> A monotone bijection would attain $0$ at some $x_0$; if $f$ were increasing then $f(x)<0$ for $x<x_0$, contradicting $f\\ge 0$, and the decreasing case fails symmetrically. So statement (1) is false too.",
+    "<b>Confirm that a bijection does exist.</b> Bijections $\\mathbb{R}\\to[0,\\infty)$ exist in abundance, since both sets have cardinality $\\mathfrak{c}$; they simply cannot be continuous."
+   ],
+   "conclusion": "Any such $f$ fails to be continuous, option (3).",
+   "pitfall": "Trying to build the map from $|x|$ or $x^{2}$, which are continuous onto $[0,\\infty)$ but two-to-one. Surjectivity is easy and injectivity is easy; it is having both together with continuity that is impossible."
   },
   {
    "n": 26,
    "qid": "706506",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Real Analysis",
+   "subtopic": "Uniform convergence of series",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Consider the sequences $(f_n)_{n\\ge1}$ and $(g_n)_{n\\ge1}$ of functions defined on the interval $[-1,1]$ by $$f_n(x)=(-1)^n\\,\\frac{x^2+n}{n^2}\\quad\\text{and}\\quad g_n(x)=(-1)^n\\,\\frac{x^2+n^2}{n^3}.$$ Which of the following statements is true?",
+   "options": [
+    "$\\sum_{n\\ge1} f_n$ and $\\sum_{n\\ge1} g_n$ are uniformly convergent on the interval $[-1,1]$.",
+    "$\\sum_{n\\ge1} f_n$ is uniformly convergent on the interval $[-1,1]$, but $\\sum_{n\\ge1} g_n$ is not.",
+    "$\\sum_{n\\ge1} g_n$ is uniformly convergent on the interval $[-1,1]$, but $\\sum_{n\\ge1} f_n$ is not.",
+    "Neither $\\sum_{n\\ge1} f_n$ nor $\\sum_{n\\ge1} g_n$ is uniformly convergent on the interval $[-1,1]$."
+   ],
+   "answer": [
+    1
+   ],
+   "given": "Two series of functions on $[-1,1]$, each with an alternating sign and a numerator that mixes an $x$-dependent term with a constant one.",
+   "concept": "Split each term into an $x$-dependent piece and a piece free of $x$. The $x$-dependent piece yields to the Weierstrass $M$-test; the $x$-free piece is a numerical series, for which uniform convergence and ordinary convergence are the same thing.",
+   "steps": [
+    "<b>Split the terms.</b> $$f_n(x)=(-1)^n\\frac{x^2}{n^2}+\\frac{(-1)^n}{n},\\qquad g_n(x)=(-1)^n\\frac{x^2}{n^3}+\\frac{(-1)^n}{n}.$$ Both carry the same tail $\\frac{(-1)^n}{n}$.",
+    "<b>Handle the $x$-dependent pieces.</b> On $[-1,1]$ we have $x^2\\le1$, so $\\bigl|(-1)^n x^2/n^2\\bigr|\\le 1/n^2$ and $\\bigl|(-1)^n x^2/n^3\\bigr|\\le 1/n^3$. Since $\\sum 1/n^2$ and $\\sum 1/n^3$ converge, the Weierstrass $M$-test gives uniform convergence of both pieces on $[-1,1]$.",
+    "<b>Handle the constant piece.</b> $\\sum_{n\\ge1}\\frac{(-1)^n}{n}$ converges by the alternating series test, to $-\\ln 2$. Its terms do not involve $x$, so the supremum of its tail over $[-1,1]$ is just the size of the tail, which tends to $0$. Uniform convergence follows.",
+    "<b>Recombine.</b> A sum of two uniformly convergent series is uniformly convergent, so both $\\sum f_n$ and $\\sum g_n$ converge uniformly on $[-1,1]$."
+   ],
+   "conclusion": "Both series converge uniformly, option (1).",
+   "pitfall": "Applying the $M$-test to the whole term. Then $\\sup_{[-1,1]}|f_n| = (1+n)/n^2 \\sim 1/n$ and $\\sum 1/n$ diverges, so the test is inconclusive &mdash; but inconclusive is not the same as false. Splitting off the alternating harmonic part is what settles it."
   },
   {
    "n": 27,
    "qid": "706507",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Linear Algebra",
+   "subtopic": "Linear independence in End(V)",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Let $V$ be a vector space over $\\mathbb{R}$. Let $T_1, T_2 : V\\to V$ be two $\\mathbb{R}$-linear transformations such that $T_1+T_2$ and $T_1-T_2$ are linearly independent over $\\mathbb{R}$. Consider the following statements:<br>(A) The transformations $T_1$ and $T_2$ are linearly independent over $\\mathbb{R}$.<br>(B) There exist $\\mathbb{R}$-linear transformations $T_3, T_4 : V\\to V$ such that $\\{T_1+T_2,\\ T_1-T_2,\\ T_3,\\ T_4\\}$ is linearly independent over $\\mathbb{R}$.<br>Which of the following statements is true?",
+   "options": [
+    "(A) is true but (B) is false.",
+    "(B) is true but (A) is false.",
+    "Both (A) and (B) are true.",
+    "Both (A) and (B) are false."
+   ],
+   "answer": [
+    3
+   ],
+   "given": "$T_1+T_2$ and $T_1-T_2$ are independent elements of the vector space $\\operatorname{End}_{\\mathbb{R}}(V)$ of linear maps $V\\to V$.",
+   "concept": "Work inside $\\operatorname{End}(V)$, which is itself a real vector space. The pair $T_1\\pm T_2$ spans the same subspace as $T_1,T_2$, and the existence of two independent operators forces $\\dim V\\ge2$, hence $\\dim\\operatorname{End}(V)\\ge4$.",
+   "steps": [
+    "<b>Statement (A): compare the spans.</b> Both $T_1+T_2$ and $T_1-T_2$ lie in $W=\\operatorname{span}\\{T_1,T_2\\}$, so $\\operatorname{span}\\{T_1+T_2,\\,T_1-T_2\\}\\subseteq W$.",
+    "<b>Force the dimension up.</b> The hypothesis says the left-hand span has dimension $2$, so $\\dim W\\ge 2$. But $W$ is spanned by two elements, so $\\dim W = 2$ exactly, which means $T_1$ and $T_2$ are linearly independent. Statement (A) is true.",
+    "<b>Statement (B): bound $\\dim V$ from below.</b> If $\\dim V=1$ then $\\operatorname{End}(V)\\cong\\mathbb{R}$ has dimension $1$ and cannot contain two independent elements. So $\\dim V\\ge2$, taking $\\dim V=\\infty$ as allowed.",
+    "<b>Bound $\\dim\\operatorname{End}(V)$.</b> For finite $\\dim V=n\\ge2$, $\\dim\\operatorname{End}(V)=n^{2}\\ge4$; for infinite-dimensional $V$, $\\operatorname{End}(V)$ is infinite-dimensional. Either way $\\dim\\operatorname{End}(V)\\ge 4$.",
+    "<b>Extend the independent set.</b> In a vector space of dimension at least $4$, any linearly independent set of size $2$ extends to one of size $4$. Choosing $T_3,T_4$ from such an extension proves statement (B)."
+   ],
+   "conclusion": "Both statements hold, option (3).",
+   "pitfall": "Trying to build $T_3,T_4$ explicitly without first checking that $\\operatorname{End}(V)$ is big enough. The whole content of (B) is the dimension count $n^2\\ge4$; once that is in hand, the extension is standard."
   },
   {
    "n": 28,
    "qid": "706508",
    "part": "B",
-   "topic": "",
-   "subtopic": "",
+   "topic": "Linear Algebra",
+   "subtopic": "Minimal and characteristic polynomials",
    "type": "single",
-   "body": "",
-   "options": [],
-   "answer": [],
-   "given": "",
-   "concept": "",
-   "steps": [],
-   "conclusion": "",
-   "pitfall": ""
+   "body": "Let $T:\\mathbb{R}^4\\to\\mathbb{R}^4$ be an $\\mathbb{R}$-linear transformation such that $$(T^2+T+I)(T-2I)=0 \\quad\\text{and}\\quad (T^2+T+2I)(T^2-4I)=0.$$ Which of the following statements is <b>FALSE</b>?",
+   "options": [
+    "$T$ is diagonalizable over $\\mathbb{R}$.",
+    "The characteristic polynomial of $T$ is $(x-2)^4$.",
+    "The characteristic polynomial of $T$ is $(x^2+x+2)(x^2-4)$.",
+    "For every $\\mathbb{R}$-linear transformation $S:\\mathbb{R}^4\\to\\mathbb{R}^4$, we have $ST=TS$."
+   ],
+   "answer": [
+    3
+   ],
+   "given": "Two polynomials annihilate $T$: $p_1(x)=(x^2+x+1)(x-2)$ and $p_2(x)=(x^2+x+2)(x^2-4)$.",
+   "concept": "The minimal polynomial divides every annihilating polynomial, so it divides their greatest common divisor. Computing that gcd pins $T$ down completely.",
+   "steps": [
+    "<b>Factor both annihilators.</b> $p_1(x)=(x^2+x+1)(x-2)$ and $p_2(x)=(x^2+x+2)(x-2)(x+2)$.",
+    "<b>Check the quadratics.</b> $x^2+x+1$ has discriminant $1-4=-3<0$ and $x^2+x+2$ has discriminant $1-8=-7<0$, so both are irreducible over $\\mathbb{R}$, and being distinct they are coprime.",
+    "<b>Test the remaining linear factor.</b> Does $x+2$ divide $p_1$? Substituting $x=-2$ gives $(4-2+1)(-2-2)=3\\cdot(-4)=-12\\neq0$, so it does not.",
+    "<b>Take the gcd.</b> The only common factor is $x-2$, so $\\gcd(p_1,p_2)=x-2$. The minimal polynomial divides it and is non-constant, hence $m_T(x)=x-2$, which means $T-2I=0$, that is $T=2I$.",
+    "<b>Test the four statements against $T=2I$.</b> (1) $2I$ is already diagonal, so it is diagonalizable: true. (2) Its characteristic polynomial is $\\det(xI-2I)=(x-2)^4$: true. (4) A scalar multiple of the identity commutes with every $S$: true. (3) $(x^2+x+2)(x^2-4)$ is not $(x-2)^4$, for instance it has $-2$ as a root while $(x-2)^4$ does not: <b>false</b>."
+   ],
+   "conclusion": "Statement (3) is the false one, so the answer is option (3).",
+   "pitfall": "Reading the two hypotheses as separate possibilities and concluding that the characteristic polynomial could be either $(x-2)^4$ or $(x^2+x+2)(x^2-4)$. Both equations hold simultaneously, so the minimal polynomial must divide the gcd, not just one of them."
   },
   {
    "n": 29,
