@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSIR NET Mathematical Sciences 28 February 2025 (Shift I) — Fully Solved Paper</title>
+<meta name="description" content="Mathematical Sciences (Code 704) · 28 February 2025 · 120 questions with step-by-step solutions">
+<meta property="og:title" content="CSIR NET Mathematical Sciences 28 February 2025 (Shift I) — Fully Solved Paper">
+<meta property="og:description" content="Mathematical Sciences (Code 704) · 28 February 2025 · 120 questions with step-by-step solutions">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NRSTATLAB">
+<meta property="og:url" content="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/papers/2025-02-28-mathematical-sciences-shift1.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="canonical" href="https://nrstatlab.github.io/CSIR-NET-MATHEMATICS/papers/2025-02-28-mathematical-sciences-shift1.html">
+<link rel="stylesheet" href="../assets/styles.css">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    packages: {'[+]': ['ams', 'noerrors', 'noundefined']}
+  },
+  loader: { load: ['[tex]/ams', '[tex]/noerrors', '[tex]/noundefined'] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code','annotation','annotation-xml'] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+
+</head>
+<body>
+<div class="nrstatlab-bar"><div class="nrstatlab-inner"><a class="nrstatlab-brand" href="https://nrstatlab.github.io/planning-for-future/">NRSTATLAB</a><span class="nrstatlab-sep">&rsaquo;</span><a class="nrstatlab-brand" style="border-bottom-color:transparent" href="../index.html">CSIR NET Mathematics</a><span class="nrstatlab-sep">&rsaquo;</span><span class="nrstatlab-here">CSIR NET Mathematics — 28 February 2025, Shift I</span><a class="nrstatlab-topics" href="../syllabus.html">Syllabus &amp; pattern</a></div></div>
+
+<nav class="topnav">
+<a href="../index.html" class="home">Home</a>
+<a href="../syllabus.html">Syllabus &amp; Pattern</a>
+<a href="../papers/index.html" style="background:#1e3a8a;color:#fff;">Solved Papers</a>
+<a href="../strategy.html">Exam Strategy</a>
+</nav>
+
+<header class="site-header">
+  <h1>CSIR NET Mathematics — 28 February 2025, Shift I</h1>
+  <p>Mathematical Sciences (Code 704) &middot; 28 February 2025 &middot; 09:00 – 12:00</p>
+  <span class="badge">120 questions &middot; every step shown</span>
+</header>
+
+<main class="container">
+
+  <div class="coverage">
+    <h3>Solutions ready: 4 of 120</h3>
+    <span class="cov-track"><span class="cov-bar" style="width:6.0%">3%</span></span>
+    <p class="cov-note">Every question in the source PDF is a page image, so each one is transcribed into MathJax and solved by hand. This bar moves as batches are checked in.</p>
+  </div>
+
+  <div class="chartbox"><h3>Topic distribution</h3><p class="chart-note">How the solved questions of this paper split across the syllabus. Use it to decide what to revise first — bars are scaled to the largest topic.</p><div class="chart-row"><span class="chart-label">General Aptitude</span><span class="chart-track"><span class="chart-bar" style="width:100.0%">4</span></span></div></div>
+
+  <div class="qtools">
+    <button type="button" id="open-all">Reveal every solution</button>
+    <button type="button" id="shut-all">Hide every solution</button>
+    <span class="spacer"></span>
+    <label for="topic-filter">Show topic</label>
+    <select id="topic-filter"><option value="all">All topics</option><option value="General Aptitude">General Aptitude</option></select>
+  </div>
+
+  <div id="paper">
+<div class="part-head" id="parta"><h2>Part A — General Aptitude</h2><p>20 questions &middot; attempt any 15 &middot; 2 marks each &middot; &minus;0.5 for a wrong answer</p></div>
+<div class="mcq" id="q1" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 1</span><span class="qn">Q1.</span> If a map is placed in such a manner that southwest becomes east, then what will north become?</div>
+<ol class="options">
+<li>Northeast</li>
+<li class="correct">Southwest</li>
+<li>Northwest</li>
+<li>Southeast</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> The map is rotated rigidly, and under that rotation the southwest direction ends up pointing east.</div>
+<div class="concept"><b>Idea used.</b> Rotating a map turns every direction by the same angle. Put the eight compass points on a circle at $45^\circ$ spacing, find the single angle that carries SW to E, then apply it to N.</div>
+<ol class="steps">
+<li><b>Put numbers on the compass.</b> Measuring clockwise from north: N $=0^\circ$, NE $=45^\circ$, E $=90^\circ$, SE $=135^\circ$, S $=180^\circ$, SW $=225^\circ$, W $=270^\circ$, NW $=315^\circ$.</li>
+<li><b>Find the rotation.</b> SW sits at $225^\circ$ and must land on E at $90^\circ$, so the rotation $\theta$ satisfies $225^\circ+\theta\equiv 90^\circ \pmod{360^\circ}$, giving $\theta = -135^\circ$, that is $225^\circ$ clockwise.</li>
+<li><b>Apply it to north.</b> N is at $0^\circ$, so it moves to $0^\circ+225^\circ = 225^\circ$.</li>
+<li><b>Read the answer off the compass.</b> $225^\circ$ is southwest.</li>
+</ol>
+<p>North becomes <b>southwest</b>, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Rotating by the wrong amount because SW and E look like a $180^\circ$ flip. They are $135^\circ$ apart, not $180^\circ$, so the two directions are not opposite and the naive answer northeast is wrong.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Direction sense</span></p>
+</div>
+<div class="mcq" id="q2" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 2</span><span class="qn">Q2.</span> If water of pH 8 is diluted 100 times with neutral water (pH $=7$) then it will</div>
+<ol class="options">
+<li>become acidic.</li>
+<li class="correct">remain basic.</li>
+<li>become neutral.</li>
+<li>become heavy.</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> A solution at pH $8$, so mildly basic, diluted a hundredfold with water that is exactly neutral.</div>
+<div class="concept"><b>Idea used.</b> Dilution moves a solution towards neutrality but can never carry it past neutrality. Adding neutral water removes no excess hydroxide, it only spreads it through more volume, so the excess shrinks towards zero and pH approaches $7$ from above without reaching it.</div>
+<ol class="steps">
+<li><b>Read the starting concentrations.</b> pH $8$ means $[\mathrm{H^+}]=10^{-8}$ and, from $[\mathrm{H^+}][\mathrm{OH^-}]=10^{-14}$, $[\mathrm{OH^-}]=10^{-6}$ mol/L.</li>
+<li><b>Identify what actually gets diluted.</b> What makes the solution basic is the <em>excess</em> of hydroxide over the neutral value, namely $10^{-6}-10^{-7}=9\times10^{-7}$ mol/L. Diluting a hundredfold leaves an excess of $9\times10^{-9}$ mol/L.</li>
+<li><b>Solve for the new pH.</b> With $h=[\mathrm{H^+}]$, charge balance gives $\dfrac{10^{-14}}{h}-h = 9\times10^{-9}$, that is $h^{2}+9\times10^{-9}h-10^{-14}=0$, whose positive root is $h\approx 9.56\times10^{-8}$.</li>
+<li><b>Convert back.</b> $\mathrm{pH} = -\log_{10}(9.56\times10^{-8}) \approx 7.02$, which is above $7$.</li>
+<li><b>Interpret.</b> The solution has moved very close to neutral but is still on the basic side, and no amount of neutral water will push it below $7$.</li>
+</ol>
+<p>It <b>remains basic</b>, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Subtracting $\log_{10}100 = 2$ from the pH to get $6$ and calling the result acidic. pH is not additive under dilution like that; treating it so would let you turn a base into an acid with pure water.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Logarithmic scales</span></p>
+</div>
+<div class="mcq" id="q3" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 3</span><span class="qn">Q3.</span> Fifteen distinct points are randomly placed on the circumference of a circle. How many distinct straight lines at the most can be formed by pairs among these points?</div>
+<ol class="options">
+<li class="correct">105</li>
+<li>455</li>
+<li>30</li>
+<li>210</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (1)</b></p>
+<div class="concept"><b>What is given.</b> Fifteen distinct points, all lying on one circle.</div>
+<div class="concept"><b>Idea used.</b> Two points determine one line, so the count is a combination. The circle matters because no three points of a circle are ever collinear, so no two different pairs give the same line.</div>
+<ol class="steps">
+<li><b>Count the pairs.</b> A line needs two points, and order does not matter, so the number of pairs is $$\binom{15}{2}=\frac{15\times14}{2}=105.$$</li>
+<li><b>Check that the lines are distinct.</b> A straight line meets a circle in at most two points, so no three of the fifteen points are collinear. Different pairs therefore give different lines and there is no over-counting.</li>
+<li><b>Conclude.</b> All $105$ lines are distinct, so $105$ is both the maximum and the exact count.</li>
+</ol>
+<p>There are <b>105</b> distinct lines, option (1).</p>
+<div class="pitfall"><b>Common slip.</b> Using $\binom{15}{3}=455$, which counts triangles rather than lines, or $15\times 14 = 210$, which counts ordered pairs and so counts every line twice.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Combinations</span></p>
+</div>
+<div class="mcq" id="q4" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 4</span><span class="qn">Q4.</span> In a population of microbial cells, the initial population is $50$, and the growth rate is $0.1$ per hour. If the population grows exponentially, what will be the approximate size of the population after $10$ hours?</div>
+<ol class="options">
+<li>51</li>
+<li>82</li>
+<li class="correct">136</li>
+<li>156</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (3)</b></p>
+<div class="concept"><b>What is given.</b> $N_0 = 50$ cells, continuous growth rate $r = 0.1$ per hour, elapsed time $t = 10$ hours.</div>
+<div class="concept"><b>Idea used.</b> Exponential growth at a continuous rate $r$ obeys $N(t) = N_0 e^{rt}$. The product $rt$ here is exactly $1$, which makes the arithmetic a single multiplication by $e$.</div>
+<ol class="steps">
+<li><b>Write the model.</b> $N(t) = N_0 e^{rt}$.</li>
+<li><b>Substitute.</b> $N(10) = 50\,e^{0.1\times 10} = 50\,e^{1}$.</li>
+<li><b>Evaluate.</b> $e \approx 2.71828$, so $N(10) \approx 50\times 2.71828 = 135.9$.</li>
+<li><b>Round.</b> Cells are whole, so the population is about $136$.</li>
+</ol>
+<p>The population is approximately <b>136</b>, option (3).</p>
+<div class="pitfall"><b>Common slip.</b> Using simple growth, $50(1+0.1\times 10) = 100$, or compounding discretely as $50(1.1)^{10}\approx 130$. The phrase &ldquo;grows exponentially&rdquo; with a rate <em>per hour</em> means the continuous model $e^{rt}$.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Exponential growth</span></p>
+</div>
+<div class="part-head" id="partb"><h2>Part B — Subject, single correct option</h2><p>40 questions &middot; attempt any 25 &middot; 3 marks each &middot; &minus;0.75 for a wrong answer</p></div>
+<div class="note"><strong>Not transcribed yet.</strong> Questions 21&ndash;60 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
+<div class="part-head" id="partc"><h2>Part C — Subject, one or more options correct</h2><p>60 questions &middot; attempt any 20 &middot; 4.75 marks each &middot; no negative marking &middot; marks only if every correct option is chosen</p></div>
+<div class="note"><strong>Not transcribed yet.</strong> Questions 61&ndash;120 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
+
+  </div>
+
+</main>
+
+<script>
+(function () {
+  var root = document.getElementById('paper');
+  if (!root) return;
+  var all = function () { return Array.prototype.slice.call(root.querySelectorAll('details')); };
+  var set = function (open) { all().forEach(function (d) { d.open = open; }); };
+  var openAll = document.getElementById('open-all');
+  var shutAll = document.getElementById('shut-all');
+  if (openAll) openAll.addEventListener('click', function () { set(true); });
+  if (shutAll) shutAll.addEventListener('click', function () { set(false); });
+
+  var filter = document.getElementById('topic-filter');
+  if (filter) {
+    filter.addEventListener('change', function () {
+      var want = filter.value;
+      root.querySelectorAll('.mcq').forEach(function (q) {
+        q.hidden = !(want === 'all' || (q.dataset.topic || '') === want);
+      });
+      root.querySelectorAll('.part-head').forEach(function (h) {
+        var n = 0, el = h.nextElementSibling;
+        while (el && !el.classList.contains('part-head')) {
+          if (el.classList.contains('mcq') && !el.hidden) n++;
+          el = el.nextElementSibling;
+        }
+        h.hidden = n === 0;
+      });
+    });
+  }
+})();
+</script>
+<footer class="site-footer">
+  <p><strong>NRSTATLAB</strong> &middot; CSIR NET Mathematical Sciences &middot; Free study material for aspirants.</p>
+  <p>Question papers belong to CSIR-HRDG / NTA and are reproduced here only for educational discussion. Solutions are our own.</p>
+</footer>
+</body>
+</html>
