@@ -50,26 +50,507 @@ window.MathJax = {
 <main class="container">
 
   <div class="coverage">
-    <h3>Solutions ready: 0 of 120</h3>
-    <span class="cov-track"><span class="cov-bar" style="width:6.0%">0%</span></span>
+    <h3>Solutions ready: 21 of 120</h3>
+    <span class="cov-track"><span class="cov-bar" style="width:17.5%">18%</span></span>
     <p class="cov-note">The source PDF stores every question as a page image, so each one is being transcribed into MathJax and solved by hand. This bar moves as batches are checked in.</p>
   </div>
 
-  
+  <div class="chartbox"><h3>Topic distribution</h3><p class="chart-note">How the solved questions of this paper split across the syllabus. Use it to decide what to revise first — bars are scaled to the largest topic.</p><div class="chart-row"><span class="chart-label">General Aptitude</span><span class="chart-track"><span class="chart-bar" style="width:100.0%">20</span></span></div><div class="chart-row"><span class="chart-label">Real Analysis</span><span class="chart-track"><span class="chart-bar" style="width:5.0%">1</span></span></div></div>
 
   <div class="qtools">
     <button type="button" id="open-all">Reveal every solution</button>
     <button type="button" id="shut-all">Hide every solution</button>
     <span class="spacer"></span>
     <label for="topic-filter">Show topic</label>
-    <select id="topic-filter"><option value="all">All topics</option></select>
+    <select id="topic-filter"><option value="all">All topics</option><option value="General Aptitude">General Aptitude</option><option value="Real Analysis">Real Analysis</option></select>
   </div>
 
   <div id="paper">
 <div class="part-head" id="parta"><h2>Part A — General Aptitude</h2><p>20 questions &middot; attempt any 15 &middot; 2 marks each &middot; &minus;0.5 for a wrong answer</p></div>
-<div class="note"><strong>Not transcribed yet.</strong> Questions 1&ndash;20 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
+<div class="mcq" id="q1" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705101</span><span class="qn">Q1.</span> A monkey covers exactly 10 m on ground in each jump. What is the least number of jumps required to reach a distance 1 m away from where the monkey jumps first?</div>
+<ol class="options">
+<li>1</li>
+<li class="correct">2</li>
+<li>3</li>
+<li>9</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> Every jump is a straight-line displacement of length exactly $10$ m, in any direction on the ground. The required net displacement is $1$ m.</div>
+<div class="concept"><b>Idea used.</b> Jumps are vectors in a plane. The resultant of two vectors of equal length $\ell$ can have any magnitude in $[0,\,2\ell]$, so two jumps already reach every distance up to $20$ m.</div>
+<ol class="steps">
+<li><b>One jump is impossible.</b> A single jump lands exactly $10$ m away, and $10\neq 1$.</li>
+<li><b>Two jumps can work.</b> Let the jumps be $\vec{u}$ and $\vec{v}$ with $|\vec u|=|\vec v|=10$ and angle $\theta$ between them. Then $$|\vec u+\vec v|=\sqrt{10^2+10^2+2(10)(10)\cos\theta}=20\left|\cos\tfrac{\theta}{2}\right|.$$</li>
+<li><b>Solve for the required angle.</b> Setting $20\left|\cos\tfrac{\theta}{2}\right| = 1$ gives $\cos\tfrac{\theta}{2}=\tfrac{1}{20}$, so $\theta = 2\cos^{-1}(0.05)\approx 174.3^\circ$. This angle exists, so the monkey lands exactly $1$ m from its start.</li>
+</ol>
+<p>Two jumps suffice and one does not, so the least number is <b>2</b>, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Reading the jump as one-dimensional, forward and backward only. Then $10-10=0$ and $10+10=20$ are the only two-jump distances and the answer looks impossible. The monkey moves on a plane, so any angle is available.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Vectors and displacement</span></p>
+</div>
+<div class="mcq" id="q2" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705102</span><span class="qn">Q2.</span> Cube root of $0.0125\%$ is closest to</div>
+<ol class="options">
+<li>$0.005\%$</li>
+<li>$0.05\%$</li>
+<li>$0.5\%$</li>
+<li class="correct">$5\%$</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (4)</b></p>
+<div class="concept"><b>What is given.</b> The number whose cube root is wanted is $0.0125\%$.</div>
+<div class="concept"><b>Idea used.</b> Convert the percentage to a plain number first, take the cube root, then convert back to a percentage. Taking the cube root of the numeral while leaving the $\%$ sign attached is what makes this question a trap.</div>
+<ol class="steps">
+<li><b>Write the percentage as a number.</b> $0.0125\% = \dfrac{0.0125}{100} = 1.25\times 10^{-4} = 125\times 10^{-6}$.</li>
+<li><b>Take the cube root.</b> $\sqrt[3]{125\times10^{-6}} = \sqrt[3]{125}\times 10^{-2} = 5\times 10^{-2} = 0.05$.</li>
+<li><b>Convert back to a percentage.</b> $0.05 = \dfrac{5}{100} = 5\%$.</li>
+<li><b>Check.</b> $(0.05)^3 = 0.000125 = 0.0125\%$, which is the original number.</li>
+</ol>
+<p>The cube root is $5\%$, option (4).</p>
+<div class="pitfall"><b>Common slip.</b> Cube-rooting $0.0125$ to get $0.232$ and then hunting for the nearest option, or answering $0.05\%$ because $0.05$ appeared during the working. The $0.05$ is the plain number; as a percentage it is $5\%$.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Percentages and roots</span></p>
+</div>
+<div class="mcq" id="q3" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705103</span><span class="qn">Q3.</span> How many 5-digit numbers, using 0 to 9, can be generated such that &lsquo;123&rsquo; appears as a string and no digit appears more than once?</div>
+<ol class="options">
+<li>228</li>
+<li>108</li>
+<li>156</li>
+<li class="correct">114</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (4)</b></p>
+<div class="concept"><b>What is given.</b> Five-digit numbers with all digits distinct, containing the block $123$ in consecutive positions. A five-digit number cannot begin with $0$.</div>
+<div class="concept"><b>Idea used.</b> Glue $1$, $2$, $3$ into a single block and count where the block can sit. The two free positions are filled from the seven unused digits, with the leading-zero restriction applied only when a free digit occupies position one.</div>
+<ol class="steps">
+<li><b>Set up.</b> The block $123$ occupies three consecutive positions, so it starts at position $1$, $2$ or $3$. The remaining two positions are filled from $\{0,4,5,6,7,8,9\}$, seven digits, without repetition.</li>
+<li><b>Block at positions 1&ndash;3.</b> The number reads $1\,2\,3\,\_\,\_$ and already starts with $1$, so no leading-zero issue. The two free places give $7\times 6 = 42$ numbers.</li>
+<li><b>Block at positions 2&ndash;4.</b> The number reads $\_\,1\,2\,3\,\_$. Position $1$ must not be $0$, leaving $6$ choices; position $5$ takes any of the $6$ digits still unused. That is $6\times 6 = 36$.</li>
+<li><b>Block at positions 3&ndash;5.</b> The number reads $\_\,\_\,1\,2\,3$. Again position $1$ has $6$ choices and position $2$ has $6$: another $36$.</li>
+<li><b>Add.</b> $42+36+36 = 114$. No number is counted twice, because all digits are distinct so the block $123$ cannot occur in two places at once.</li>
+</ol>
+<p>There are <b>114</b> such numbers, option (4).</p>
+<div class="pitfall"><b>Common slip.</b> Forgetting that a five-digit number cannot start with $0$. Using $7\times 6=42$ for all three positions of the block gives $126$, which is not among the options.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Permutations and combinations</span></p>
+</div>
+<div class="mcq" id="q4" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705104</span><span class="qn">Q4.</span> The diagrams show two orientations of a die having numbers 1 to 6 written on different faces. In the first the visible faces are $3$ on top, $4$ in front and $5$ on the right; in the second they are $4$ on top, $2$ in front and $5$ on the right. The number on the face opposite the face showing $3$</div>
+<ol class="options">
+<li class="correct">is 2</li>
+<li>is 1</li>
+<li>is 6</li>
+<li>cannot be determined from the given data</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (1)</b></p>
+<div class="concept"><b>What is given.</b> View 1 shows top $=3$, front $=4$, right $=5$. View 2 shows top $=4$, front $=2$, right $=5$.</div>
+<div class="concept"><b>Idea used.</b> The face $5$ is on the right in both views, so the second view is the first one rotated about the axis through $5$ and its opposite face. That rotation cycles top, front, bottom and back among themselves.</div>
+<ol class="steps">
+<li><b>Identify the axis.</b> Both views show $5$ on the right, so the die has simply been turned about the left&ndash;right axis through the $5$ face. Under that turn the four faces top, front, bottom, back rotate in a cycle.</li>
+<li><b>Apply the rotation.</b> Roll the die one quarter-turn towards the viewer, so front goes to top, bottom goes to front, back goes to bottom and top goes to back.</li>
+<li><b>Match the second view.</b> After the turn the top is the old front, namely $4$, which is exactly what view 2 shows. So the turn is the right one, and view 2's front must be the old bottom.</li>
+<li><b>Read off the answer.</b> View 2's front is $2$, so the old bottom is $2$. The old bottom is the face opposite the old top, and the old top was $3$.</li>
+</ol>
+<p>The face opposite $3$ carries $2$, option (1).</p>
+<div class="pitfall"><b>Common slip.</b> Assuming that because $4$ and $5$ are adjacent to $3$ the opposite face must be one of the unseen numbers $1$ or $6$. The number $2$ is never seen next to $3$ in either view precisely because it is hidden underneath.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Spatial reasoning</span></p>
+</div>
+<div class="mcq" id="q5" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705105</span><span class="qn">Q5.</span> There are four containers of equal height, whose bases are a circle, a square, a rectangle and an equilateral triangle having the same area. Which one of the following statements about these containers is true?</div>
+<ol class="options">
+<li class="correct">Their volumes are equal.</li>
+<li>Volume of the rectangular container is larger than that of the square container.</li>
+<li>Volume of the triangular container is smaller than that of the square container.</li>
+<li>Volume of the square container is larger than that of the circular container.</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (1)</b></p>
+<div class="concept"><b>What is given.</b> Four prisms of equal height whose base areas are all equal, though the base shapes differ.</div>
+<div class="concept"><b>Idea used.</b> For any prism or cylinder, volume $=$ base area $\times$ height. The shape of the base never enters the formula.</div>
+<ol class="steps">
+<li><b>Write the volume.</b> Each container is a prism (or a cylinder) of height $h$ on a base of area $A$, so its volume is $V = A\,h$.</li>
+<li><b>Use the hypotheses.</b> The problem states that $h$ is the same for all four and that $A$ is the same for all four.</li>
+<li><b>Conclude.</b> Since $V = Ah$ depends only on $A$ and $h$, all four volumes are equal, whatever the base shapes are.</li>
+</ol>
+<p>All four volumes are equal, option (1). Options (2), (3) and (4) each claim a strict inequality, and every one of them is false.</p>
+<div class="pitfall"><b>Common slip.</b> Confusing this with the isoperimetric fact that among shapes of equal <em>perimeter</em> the circle has the largest area. Here the areas are given as equal, so there is nothing left to compare.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Mensuration</span></p>
+</div>
+<div class="mcq" id="q6" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705106</span><span class="qn">Q6.</span> The diagrams show the rates of diamond and emerald in a range of sizes. For the diamond the price rises linearly from $0$ to $5$ lakh Rs per carat as the weight goes from $0$ to $2.5$ carat; for the emerald it rises linearly from $0$ to $2.5$ lakh Rs per carat over the same range. A person wants to buy a diamond and an emerald of identical size for a total of Rs. $6{,}75{,}000$. What is that size?</div>
+<ol class="options">
+<li>1 carat</li>
+<li class="correct">1.5 carat</li>
+<li>2 carat</li>
+<li>2.5 carat</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> Both graphs plot <em>price per carat</em> against weight, and both pass through the origin as straight lines. At $2.5$ carat the diamond rate is $5$ lakh Rs/carat and the emerald rate is $2.5$ lakh Rs/carat.</div>
+<div class="concept"><b>Idea used.</b> The $y$-axis is a <em>rate</em>, not a total. Cost $=$ rate $\times$ weight, so a rate that itself grows linearly with weight makes the cost grow as the square of the weight.</div>
+<ol class="steps">
+<li><b>Read the two rate laws.</b> Both lines pass through the origin. Diamond: slope $=5/2.5=2$, so the rate is $2w$ lakh Rs per carat at weight $w$. Emerald: slope $=2.5/2.5=1$, so its rate is $w$ lakh Rs per carat.</li>
+<li><b>Turn rates into costs.</b> Cost $=$ (rate) $\times$ (weight). Diamond costs $w\cdot 2w = 2w^2$ lakh Rs, emerald costs $w\cdot w = w^2$ lakh Rs.</li>
+<li><b>Form the equation.</b> Total $= 2w^2 + w^2 = 3w^2$ lakh Rs, and Rs. $6{,}75{,}000 = 6.75$ lakh, so $3w^2 = 6.75$.</li>
+<li><b>Solve.</b> $w^2 = 2.25$, hence $w = 1.5$ carat.</li>
+</ol>
+<p>The common size is $1.5$ carat, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Treating the $y$-axis as the total price and solving $2w + w = 6.75$, which gives $w = 2.25$ carat and matches no option. The axis label reads Lakh Rs <em>per carat</em>.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Graph interpretation</span></p>
+</div>
+<div class="mcq" id="q7" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705107</span><span class="qn">Q7.</span> If A is B&rsquo;s daughter, B is C&rsquo;s brother and D is C&rsquo;s father, then what is A to D?</div>
+<ol class="options">
+<li>Grandfather</li>
+<li>Grandmother</li>
+<li>Grandson</li>
+<li class="correct">Granddaughter</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (4)</b></p>
+<div class="concept"><b>What is given.</b> A is the daughter of B; B is the brother of C; D is the father of C.</div>
+<div class="concept"><b>Idea used.</b> Work up the chain one link at a time, and keep track of the gender that each stated relation forces.</div>
+<ol class="steps">
+<li><b>B and C are siblings.</b> B is C&rsquo;s brother, so they share the same parents.</li>
+<li><b>D is B&rsquo;s father too.</b> D is C&rsquo;s father, and since B is C&rsquo;s sibling, D is also B&rsquo;s father.</li>
+<li><b>Go down one generation.</b> A is B&rsquo;s daughter, so A is the child of D&rsquo;s child, that is, D&rsquo;s grandchild.</li>
+<li><b>Fix the gender.</b> A is a <em>daughter</em>, so A is female.</li>
+</ol>
+<p>A is D&rsquo;s granddaughter, option (4).</p>
+<div class="pitfall"><b>Common slip.</b> Answering from D&rsquo;s side instead of A&rsquo;s. The question asks what A is <em>to</em> D, so the answer must describe A, not D. Options (1) and (2) describe D.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Blood relations</span></p>
+</div>
+<div class="mcq" id="q8" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705108</span><span class="qn">Q8.</span> A block of marble $4\,\text{m}\times 3\,\text{m}\times 2\,\text{m}$ in size is cut into square tiles of $1$ m side having thickness of $10$ cm. Assuming there is no wastage in cutting, how many tiles will be made?</div>
+<ol class="options">
+<li>120</li>
+<li class="correct">240</li>
+<li>360</li>
+<li>480</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> A block of volume $4\times3\times2$ cubic metres, cut with no wastage into tiles measuring $1\,\text{m}\times1\,\text{m}\times10\,\text{cm}$.</div>
+<div class="concept"><b>Idea used.</b> With no wastage the total volume is conserved, so the count is simply the block volume divided by the tile volume. Convert every length to the same unit before dividing.</div>
+<ol class="steps">
+<li><b>Volume of the block.</b> $4\times 3\times 2 = 24\ \text{m}^3$.</li>
+<li><b>Volume of one tile.</b> The thickness is $10$ cm $= 0.1$ m, so the tile is $1\times 1\times 0.1 = 0.1\ \text{m}^3$.</li>
+<li><b>Divide.</b> Number of tiles $=\dfrac{24}{0.1} = 240$.</li>
+<li><b>Sanity check on the cutting.</b> The block is $4$ m $\times$ $3$ m $\times$ $2$ m, so it splits into $4\times3=12$ columns of base $1\,\text{m}\times1\,\text{m}$, each $2$ m tall, and each column gives $2/0.1 = 20$ tiles. That is $12\times 20 = 240$, so the tiling really is possible without waste.</li>
+</ol>
+<p><b>240</b> tiles, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Leaving the thickness in centimetres and dividing $24$ by $10$, or by $1\times1\times10$. Mixing metres with centimetres in one division is the usual source of the wrong options here.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Mensuration</span></p>
+</div>
+<div class="mcq" id="q9" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705109</span><span class="qn">Q9.</span> A lady walks one-tenth of the total distance at $3$ km/h, one-sixth she runs at $5$ km/h, one-fifth at $6$ km/h, and covers the remaining $16$ km at $16$ km/h by cycle. What is the total distance?</div>
+<ol class="options">
+<li>14 km</li>
+<li>16 km</li>
+<li>24 km</li>
+<li class="correct">30 km</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (4)</b></p>
+<div class="concept"><b>What is given.</b> Fractions $\tfrac1{10}$, $\tfrac16$ and $\tfrac15$ of the journey are covered in three stages, and what is left over is $16$ km.</div>
+<div class="concept"><b>Idea used.</b> The speeds are decoration here. Only the fractions matter: add them, subtract from $1$, and the leftover fraction equals the stated $16$ km.</div>
+<ol class="steps">
+<li><b>Add the three fractions.</b> With denominator $30$, $$\frac1{10}+\frac16+\frac15=\frac{3}{30}+\frac{5}{30}+\frac{6}{30}=\frac{14}{30}=\frac{7}{15}.$$</li>
+<li><b>Find the leftover fraction.</b> $1-\dfrac{7}{15}=\dfrac{8}{15}$ of the journey is covered by cycle.</li>
+<li><b>Equate to the given distance.</b> If $D$ is the total distance, $\dfrac{8}{15}D = 16$.</li>
+<li><b>Solve.</b> $D = 16\times\dfrac{15}{8} = 30$ km.</li>
+</ol>
+<p>The total distance is <b>30</b> km, option (4).</p>
+<div class="pitfall"><b>Common slip.</b> Being drawn into computing times for each leg. The four speeds are never needed; they are there to make the question look longer than it is.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Time, speed and distance</span></p>
+</div>
+<div class="mcq" id="q10" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705110</span><span class="qn">Q10.</span> An OTP is made of six digits using 0 to 9. If three digits and their positions are known, what is the probability (in percentage) of discovering the full pin within 100 trials?</div>
+<ol class="options">
+<li class="correct">$10\%$</li>
+<li>$20\%$</li>
+<li>$30\%$</li>
+<li>$40\%$</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (1)</b></p>
+<div class="concept"><b>What is given.</b> Six digit places; three of them are already known, together with where they sit. Up to $100$ distinct attempts are allowed.</div>
+<div class="concept"><b>Idea used.</b> Only the unknown places generate possibilities. Trying $100$ different candidates out of $N$ equally likely ones succeeds with probability $100/N$, because the attempts are distinct and exactly one candidate is correct.</div>
+<ol class="steps">
+<li><b>Count the unknowns.</b> Three positions remain, each of which can be any of the $10$ digits $0$ to $9$.</li>
+<li><b>Count the candidates.</b> The number of possible OTPs consistent with what is known is $10^3 = 1000$, all equally likely.</li>
+<li><b>Count favourable trials.</b> A sensible guesser never repeats a candidate, so $100$ trials cover $100$ distinct candidates out of $1000$, exactly one of which is right.</li>
+<li><b>Compute.</b> Probability $=\dfrac{100}{1000}=0.1 = 10\%$.</li>
+</ol>
+<p>The probability is $\mathbf{10\%}$, option (1).</p>
+<div class="pitfall"><b>Common slip.</b> Counting $10^6$ possibilities and ignoring the three known digits, or repeating guesses at random, which would give $1-(1-\tfrac1{1000})^{100}\approx 9.5\%$ instead of the clean $10\%$ the question intends.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Probability</span></p>
+</div>
+<div class="mcq" id="q11" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705111</span><span class="qn">Q11.</span> Ramesh is taller than Rajesh but not taller than Rupesh. Suresh&rsquo;s height is the average of the heights of Naresh and Rajesh. If Rajesh is taller than Naresh then who is the shortest among them?</div>
+<ol class="options">
+<li>Suresh</li>
+<li class="correct">Naresh</li>
+<li>Rupesh</li>
+<li>Cannot be determined</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> Ramesh $>$ Rajesh; Ramesh $\le$ Rupesh; Suresh $=\tfrac12(\text{Naresh}+\text{Rajesh})$; Rajesh $>$ Naresh.</div>
+<div class="concept"><b>Idea used.</b> The average of two distinct numbers lies strictly between them. That single fact places Suresh above Naresh and removes the only rival for last place.</div>
+<ol class="steps">
+<li><b>Place Suresh.</b> Since Rajesh $>$ Naresh, the mean $\tfrac12(\text{Naresh}+\text{Rajesh})$ lies strictly between them, so $$\text{Naresh} < \text{Suresh} < \text{Rajesh}.$$</li>
+<li><b>Place Ramesh and Rupesh.</b> The first sentence gives Rajesh $<$ Ramesh $\le$ Rupesh.</li>
+<li><b>Chain the inequalities.</b> $$\text{Naresh} < \text{Suresh} < \text{Rajesh} < \text{Ramesh} \le \text{Rupesh}.$$</li>
+<li><b>Read off the minimum.</b> Naresh sits at the bottom of the chain, and every comparison used is strict, so there is no ambiguity.</li>
+</ol>
+<p><b>Naresh</b> is the shortest, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Choosing &ldquo;cannot be determined&rdquo; because Ramesh and Rupesh are only related by $\le$. That looseness sits at the tall end of the order and cannot affect who is shortest.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Ordering and ranking</span></p>
+</div>
+<div class="mcq" id="q12" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705112</span><span class="qn">Q12.</span> The value of $\left(1-\frac{1}{2025}\right)\left(1-\frac{1}{2024}\right)\left(1-\frac{1}{2023}\right)\cdots\left(1-\frac{1}{2001}\right)$ is</div>
+<ol class="options">
+<li>$\left(1-\frac{1}{79}\right)$</li>
+<li>$\left(1-\frac{1}{80}\right)$</li>
+<li class="correct">$\left(1-\frac{1}{81}\right)$</li>
+<li>$\left(1-\frac{1}{82}\right)$</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (3)</b></p>
+<div class="concept"><b>What is given.</b> A product of the terms $1-\frac1n$ for every integer $n$ from $2001$ to $2025$.</div>
+<div class="concept"><b>Idea used.</b> Write each factor as $\frac{n-1}{n}$. Consecutive factors cancel, leaving only the first numerator and the last denominator.</div>
+<ol class="steps">
+<li><b>Rewrite each factor.</b> $1-\dfrac1n=\dfrac{n-1}{n}$, so the product, taken in increasing order of $n$, is $$\frac{2000}{2001}\cdot\frac{2001}{2002}\cdot\frac{2002}{2003}\cdots\frac{2024}{2025}.$$</li>
+<li><b>Telescope.</b> Every numerator after the first cancels the denominator before it, leaving $\dfrac{2000}{2025}$.</li>
+<li><b>Reduce.</b> Both are divisible by $25$: $\dfrac{2000}{2025}=\dfrac{80}{81}$.</li>
+<li><b>Match the form of the options.</b> $\dfrac{80}{81}=1-\dfrac{1}{81}$.</li>
+</ol>
+<p>The product equals $1-\dfrac{1}{81}$, option (3).</p>
+<div class="pitfall"><b>Common slip.</b> Miscounting the number of factors. There are $2025-2001+1=25$ of them, so the surviving numerator is $2000$, not $2001$; slipping by one gives $\tfrac{2001}{2025}$, which does not reduce to any option.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Telescoping products</span></p>
+</div>
+<div class="mcq" id="q13" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705113</span><span class="qn">Q13.</span> One side and one diagonal of a rhombus are $13$ cm and $24$ cm, respectively. Then the area of the rhombus is</div>
+<ol class="options">
+<li>$90\ \text{cm}^2$</li>
+<li>$100\ \text{cm}^2$</li>
+<li>$110\ \text{cm}^2$</li>
+<li class="correct">$120\ \text{cm}^2$</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (4)</b></p>
+<div class="concept"><b>What is given.</b> A rhombus of side $13$ cm with one diagonal equal to $24$ cm.</div>
+<div class="concept"><b>Idea used.</b> The diagonals of a rhombus bisect each other at right angles, so each half-diagonal pair and a side form a right triangle. The area is half the product of the diagonals.</div>
+<ol class="steps">
+<li><b>Halve the known diagonal.</b> The diagonals bisect each other, so half of the given diagonal is $24/2 = 12$ cm.</li>
+<li><b>Use the right triangle.</b> A side of the rhombus is the hypotenuse of a right triangle whose legs are the two half-diagonals. With hypotenuse $13$ and one leg $12$, the other leg is $$\sqrt{13^2-12^2}=\sqrt{169-144}=\sqrt{25}=5.$$</li>
+<li><b>Recover the second diagonal.</b> It is twice that leg: $2\times 5 = 10$ cm.</li>
+<li><b>Apply the area formula.</b> $$\text{Area}=\tfrac12 d_1 d_2=\tfrac12(24)(10)=120\ \text{cm}^2.$$</li>
+</ol>
+<p>The area is $120\ \text{cm}^2$, option (4).</p>
+<div class="pitfall"><b>Common slip.</b> Using $\tfrac12(13)(24)$, which treats a side as though it were a diagonal, or forgetting to double the leg $5$ before applying the area formula.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Plane geometry</span></p>
+</div>
+<div class="mcq" id="q14" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705114</span><span class="qn">Q14.</span> Two fair dice are thrown at random independently. What is the probability that the average of the values on their upper faces is $4$?</div>
+<ol class="options">
+<li class="correct">$5/36$</li>
+<li>$1/6$</li>
+<li>$7/36$</li>
+<li>$2/9$</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (1)</b></p>
+<div class="concept"><b>What is given.</b> Two independent fair dice, so $36$ equally likely ordered outcomes.</div>
+<div class="concept"><b>Idea used.</b> An average of $4$ for two numbers means their sum is $8$. Count the ordered pairs summing to $8$ and divide by $36$.</div>
+<ol class="steps">
+<li><b>Translate the condition.</b> $\dfrac{a+b}{2}=4$ is the same as $a+b=8$.</li>
+<li><b>List the ordered pairs.</b> $(2,6),(3,5),(4,4),(5,3),(6,2)$. Note $(1,7)$ is impossible since a die shows at most $6$.</li>
+<li><b>Count.</b> That is $5$ favourable outcomes out of $36$ equally likely ones.</li>
+<li><b>Divide.</b> The probability is $\dfrac{5}{36}$.</li>
+</ol>
+<p>The probability is $\dfrac{5}{36}$, option (1).</p>
+<div class="pitfall"><b>Common slip.</b> Counting $\{2,6\},\{3,5\},\{4,4\}$ as three unordered cases and dividing by $36$, or forgetting that $(4,4)$ occurs only once while $(2,6)$ and $(6,2)$ are two distinct outcomes.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Probability</span></p>
+</div>
+<div class="mcq" id="q15" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705115</span><span class="qn">Q15.</span> The square of the geometric mean of two positive integers is $30$. The smallest possible sum of the two integers is</div>
+<ol class="options">
+<li>10</li>
+<li class="correct">11</li>
+<li>13</li>
+<li>17</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> Two positive integers $a$ and $b$ with $\left(\sqrt{ab}\right)^2 = ab = 30$.</div>
+<div class="concept"><b>Idea used.</b> For a fixed product, the sum $a+b$ is smallest when the two factors are as close together as possible. Among integers that means the factor pair straddling $\sqrt{30}\approx 5.48$.</div>
+<ol class="steps">
+<li><b>Turn the condition into a product.</b> The geometric mean of $a$ and $b$ is $\sqrt{ab}$, so its square is $ab = 30$.</li>
+<li><b>List the factor pairs of 30.</b> $(1,30)$, $(2,15)$, $(3,10)$, $(5,6)$.</li>
+<li><b>Compute the sums.</b> $31$, $17$, $13$ and $11$ respectively.</li>
+<li><b>Take the minimum.</b> The smallest is $11$, from the pair $(5,6)$, which is indeed the pair closest together as the AM&ndash;GM reasoning predicts.</li>
+</ol>
+<p>The smallest possible sum is <b>11</b>, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Applying AM $\ge$ GM to get $a+b\ge 2\sqrt{30}\approx 10.95$ and then answering $10$. That bound is not attained by integers; the least achievable integer sum is $11$.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Means and inequalities</span></p>
+</div>
+<div class="mcq" id="q16" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705116</span><span class="qn">Q16.</span> An electric heater uses approximately $1$ KWH for increasing temperature of $1$ L water by $1^\circ$C. If the heating element has a rating of $10$ KW, what is the time taken to raise the temperature of $1$ L water by $1\ ^\circ$C?</div>
+<ol class="options">
+<li>1 hour</li>
+<li>15 mins</li>
+<li>10 mins</li>
+<li class="correct">6 mins</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (4)</b></p>
+<div class="concept"><b>What is given.</b> Energy required $=1$ kWh. Power available $=10$ kW.</div>
+<div class="concept"><b>Idea used.</b> Energy $=$ power $\times$ time, so time $=$ energy $\div$ power. The unit kWh is built so that this division is immediate.</div>
+<ol class="steps">
+<li><b>Write the relation.</b> $\text{time}=\dfrac{\text{energy}}{\text{power}}$.</li>
+<li><b>Substitute.</b> $\text{time}=\dfrac{1\ \text{kWh}}{10\ \text{kW}} = 0.1\ \text{h}$.</li>
+<li><b>Convert to minutes.</b> $0.1\times 60 = 6$ minutes.</li>
+</ol>
+<p>It takes <b>6 minutes</b>, option (4).</p>
+<div class="pitfall"><b>Common slip.</b> Multiplying instead of dividing, or reading the $10$ kW rating as making the job ten times slower rather than ten times faster. A more powerful element delivers the same energy in less time.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Units and rates</span></p>
+</div>
+<div class="mcq" id="q17" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705117</span><span class="qn">Q17.</span> An experiment has collected data presented in an X&ndash;Y graph. The points oscillate about $Y=0$ with a period of roughly $2$ units, starting near $Y=1$ at $X=0$, and the size of the swings shrinks steadily as $X$ increases, so that by $X\approx 6$ they are barely visible. What would be the best function to fit the data? (for some positive constant $k$)</div>
+<ol class="options">
+<li>$Y=\cos[kX]$</li>
+<li>$Y=\sin[kX^{2}]$</li>
+<li>$Y=\tan[kX^{3}]$</li>
+<li class="correct">$Y=e^{-x/k}\cos[kX]$</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (4)</b></p>
+<div class="concept"><b>What is given.</b> A scatter plot that oscillates regularly about zero while its amplitude decays towards zero, and which starts at a maximum near $Y=1$ when $X=0$.</div>
+<div class="concept"><b>Idea used.</b> Read three features off the plot: the value at $X=0$, whether the oscillation is periodic, and whether the amplitude is constant or decaying. Each feature eliminates candidates.</div>
+<ol class="steps">
+<li><b>The amplitude decays.</b> The swings get visibly smaller as $X$ grows, so the fitting function must carry a decaying factor. This alone rules out options (1), (2) and (3), all of which oscillate forever between fixed bounds or blow up.</li>
+<li><b>Check the start.</b> At $X=0$ the data sit near $+1$. Since $e^{0}\cos 0 = 1$, option (4) starts at exactly $1$, whereas $\sin[kX^2]$ starts at $0$.</li>
+<li><b>Check the regularity.</b> The zero crossings are evenly spaced, which matches $\cos[kX]$. In $\sin[kX^{2}]$ the crossings crowd together as $X$ grows, which the data do not do.</li>
+<li><b>Rule out the tangent.</b> $\tan[kX^{3}]$ has vertical asymptotes and takes arbitrarily large values, while the data stay inside $[-1,1]$.</li>
+</ol>
+<p>The damped cosine $Y=e^{-x/k}\cos[kX]$ is the fit, option (4).</p>
+<div class="pitfall"><b>Common slip.</b> Choosing the plain cosine because the shape looks sinusoidal. A plain cosine keeps the same amplitude for ever; the shrinking envelope is the whole point of the question.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Curve fitting</span></p>
+</div>
+<div class="mcq" id="q18" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705118</span><span class="qn">Q18.</span> Ten litre (L) milk contains $10\%$ water. How much water should be added to increase its proportion to $20\%$?</div>
+<ol class="options">
+<li>1 L</li>
+<li class="correct">1.25 L</li>
+<li>2 L</li>
+<li>2.25 L</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> A $10$ L mixture that is $10\%$ water, so $1$ L water and $9$ L pure milk. Water is added; no milk is added or removed.</div>
+<div class="concept"><b>Idea used.</b> The quantity of pure milk is unchanged by the addition, so it is easiest to track the milk, whose share falls from $90\%$ to $80\%$.</div>
+<ol class="steps">
+<li><b>Split the original mixture.</b> Water $=10\%$ of $10 = 1$ L; milk $=9$ L.</li>
+<li><b>Let $x$ be the water added.</b> The new total is $10+x$ litres and the new water content is $1+x$ litres.</li>
+<li><b>Impose the required proportion.</b> $$\frac{1+x}{10+x}=\frac{20}{100}=\frac15.$$</li>
+<li><b>Solve.</b> $5(1+x) = 10+x$, so $5+5x = 10+x$, giving $4x = 5$ and $x = 1.25$ L.</li>
+<li><b>Check with the milk.</b> Milk stays at $9$ L and must become $80\%$ of the total, so the total is $9/0.8 = 11.25$ L, an increase of exactly $1.25$ L.</li>
+</ol>
+<p>Add <b>1.25 L</b> of water, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Adding $10\%$ of $10$ litres, that is $1$ L, on the grounds that the proportion must rise by ten percentage points. Diluting also enlarges the denominator, so more than $1$ L is needed.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Mixtures and alligation</span></p>
+</div>
+<div class="mcq" id="q19" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705119</span><span class="qn">Q19.</span> If Asha&rsquo;s mother is Tanisha&rsquo;s daughter&rsquo;s aunt and Tanisha has no nephew, then Asha is Tanisha&rsquo;s</div>
+<ol class="options">
+<li>mother</li>
+<li class="correct">niece</li>
+<li>grand mother</li>
+<li>sister</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> Asha&rsquo;s mother is an aunt of Tanisha&rsquo;s daughter, and Tanisha has no nephew.</div>
+<div class="concept"><b>Idea used.</b> An aunt of a child is a sister of one of the child&rsquo;s parents. Fixing which parent, and then using the &ldquo;no nephew&rdquo; clause to fix Asha&rsquo;s gender, pins the answer down.</div>
+<ol class="steps">
+<li><b>Name the people.</b> Let $T$ be Tanisha, $D$ her daughter, and $M$ Asha&rsquo;s mother. We are told $M$ is $D$&rsquo;s aunt.</li>
+<li><b>Identify $M$.</b> An aunt of $D$ is a sister of one of $D$&rsquo;s parents, and $T$ is $D$&rsquo;s mother. So $M$ is $T$&rsquo;s sister.</li>
+<li><b>Place Asha.</b> Asha is $M$&rsquo;s child, so Asha is the child of Tanisha&rsquo;s sister, that is, Tanisha&rsquo;s nephew or niece.</li>
+<li><b>Use the extra clue.</b> Tanisha has no nephew, so Asha cannot be male. Asha is therefore Tanisha&rsquo;s niece.</li>
+</ol>
+<p>Asha is Tanisha&rsquo;s <b>niece</b>, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Ignoring the &ldquo;no nephew&rdquo; clause. It is not decoration: the name Asha is used for both men and women, and that clause is what forces the female relation.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Blood relations</span></p>
+</div>
+<div class="mcq" id="q20" data-topic="General Aptitude">
+<div class="q"><span class="qid">ID 705120</span><span class="qn">Q20.</span> A chocolate bar of $5$ cm length and $4$ cm width has to be cut into $1\ \text{cm}\times 1\ \text{cm}$ pieces. How many minimum cuts would be required, if pieces are to be taken one-by-one? (One can start by cutting along either length or width, before removing $1\ \text{cm}\times1\ \text{cm}$ pieces one by one)</div>
+<ol class="options">
+<li>20</li>
+<li class="correct">19</li>
+<li>18</li>
+<li>10</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (2)</b></p>
+<div class="concept"><b>What is given.</b> A $5\times4$ bar to be reduced to twenty $1\times1$ squares, cutting one piece at a time so that each cut separates a single piece into two.</div>
+<div class="concept"><b>Idea used.</b> Count pieces, not cuts. Every cut acts on exactly one piece and turns it into two, so each cut raises the number of pieces by exactly one, whatever route you take.</div>
+<ol class="steps">
+<li><b>Set up the invariant.</b> Start with $1$ piece. A cut splits one piece into two, so after $c$ cuts there are exactly $1+c$ pieces. This holds no matter where the cuts are made.</li>
+<li><b>Count the target pieces.</b> A $5\ \text{cm}\times4\ \text{cm}$ bar yields $5\times4=20$ unit squares.</li>
+<li><b>Solve for the number of cuts.</b> $1+c = 20$ gives $c = 19$, and this is forced, so $19$ is both the minimum and the maximum.</li>
+<li><b>Confirm with an explicit route.</b> Four cuts split the bar into five $1\times 4$ strips; each strip then needs three cuts to give four squares, that is $5\times 3=15$. Total $4+15=19$.</li>
+</ol>
+<p>Exactly <b>19</b> cuts, option (2).</p>
+<div class="pitfall"><b>Common slip.</b> Answering $10$ by imagining full-width cuts that pass through several pieces at once. The question fixes cuts that take pieces off one by one, so no cut can split two pieces simultaneously.</div>
+</details>
+<p class="tags"><span class="tag">General Aptitude</span><span class="tag">Invariants</span></p>
+</div>
 <div class="part-head" id="partb"><h2>Part B — Subject, single correct option</h2><p>40 questions &middot; attempt any 25 &middot; 3 marks each &middot; &minus;0.75 for a wrong answer</p></div>
-<div class="note"><strong>Not transcribed yet.</strong> Questions 21&ndash;60 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
+<div class="mcq" id="q21" data-topic="Real Analysis">
+<div class="q"><span class="qid">ID 706501</span><span class="qn">Q21.</span> Let $A, B$ be two non-empty subsets of $\mathbb{R}$. Let $$S=\{f:A\to\mathbb{R}\mid f\text{ is continuous}\},\quad T=\{f:B\to\mathbb{R}\mid f\text{ is continuous}\},\quad U=\{f:A\times A\to\mathbb{R}\mid f\text{ is continuous}\}.$$ Which of the following statements is true?</div>
+<ol class="options">
+<li class="correct">If $A$ is finite, then there exists a bijection between $S$ and $U$.</li>
+<li>If $A$ is finite and $B=[0,1]$, then there is no bijection between $S$ and $T$.</li>
+<li>There is no bijection between $S$ and $U$ for any choice of $A$.</li>
+<li>If $A\neq B$, then there is no bijection between $T$ and $U$.</li>
+</ol>
+<details><summary>Show step-by-step solution</summary>
+<p class="verdict"><b>Answer: (1)</b></p>
+<div class="concept"><b>What is given.</b> $A,B\subseteq\mathbb{R}$ non-empty, each carrying the subspace topology, and $S,T,U$ the sets of real-valued continuous functions on $A$, $B$ and $A\times A$.</div>
+<div class="concept"><b>Idea used.</b> A bijection between two sets exists precisely when they have the same cardinality. A finite subset of $\mathbb{R}$ is discrete, so <em>every</em> function on it is continuous, and a continuous function on a separable space is determined by its values on a countable dense subset.</div>
+<ol class="steps">
+<li><b>A finite set is discrete.</b> If $|A| = n < \infty$, every point of $A$ is isolated in the subspace topology, so every function $A\to\mathbb{R}$ is continuous. Hence $S$ is in bijection with $\mathbb{R}^{n}$ and $|S| = \mathfrak{c}^{\,n} = \mathfrak{c}$.</li>
+<li><b>Do the same for $A\times A$.</b> It is finite with $n^{2}$ points and also discrete, so $U$ is in bijection with $\mathbb{R}^{n^{2}}$ and $|U| = \mathfrak{c}^{\,n^{2}} = \mathfrak{c}$.</li>
+<li><b>Conclude for option (1).</b> $|S| = |U| = \mathfrak{c}$, so a bijection between $S$ and $U$ exists. Statement (1) is true, and statement (3), which denies this for every $A$, is false.</li>
+<li><b>Dispose of option (2).</b> $B=[0,1]$ is separable, and a continuous function on it is determined by its values on $\mathbb{Q}\cap[0,1]$, so $|T|\le\mathfrak{c}^{\aleph_0}=\mathfrak{c}$. The constants give $|T|\ge\mathfrak{c}$, hence $|T|=\mathfrak{c}=|S|$ and a bijection does exist. Statement (2) is false.</li>
+<li><b>Dispose of option (4).</b> Take $A=B=\{0\}$ &mdash; or any $A\ne B$ with both finite &mdash; and both $T$ and $U$ again have cardinality $\mathfrak{c}$. Sets being unequal says nothing about their cardinalities, so statement (4) is false.</li>
+</ol>
+<p>Only statement (1) holds, so the answer is option (1).</p>
+<div class="pitfall"><b>Common slip.</b> Treating $S$ and $U$ as topological or vector-space objects and looking for a continuous or linear bijection. The question asks only for a bijection of sets, so the whole problem is a cardinality count.</div>
+</details>
+<p class="tags"><span class="tag">Real Analysis</span><span class="tag">Cardinality of function spaces</span></p>
+</div>
 <div class="part-head" id="partc"><h2>Part C — Subject, one or more options correct</h2><p>60 questions &middot; attempt any 20 &middot; 4.75 marks each &middot; no negative marking &middot; marks only if every correct option is chosen</p></div>
 <div class="note"><strong>Not transcribed yet.</strong> Questions 61&ndash;120 of this paper are still being extracted from the source PDF and worked out. They appear here as soon as each solution is checked.</div>
 
